@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Ra Dãy Số Fibonacy</title>
+</head>
+<body>
+<script>
+    number=prompt("số lượng số cần in ra là");
+    while (number<2){
+        number=prompt("nhập lại số lượng");
+    }
+    let number1=+0;
+    let number2=+1;
+    let temp =0;
+    let inForm=number+" cần in ra là: "+number1+"; "+number2+"; ";
+    let count=2;
+    while (count<number){
+        temp=number1;
+        number1=number2;
+        number2=temp+number2;
+        inForm=inForm+ number2+"; ";
+        count++;
+    }
+    inForm=inForm.substring(0,inForm.length-2);
+    document.write(inForm);
+</script>
+</body>
+</html>

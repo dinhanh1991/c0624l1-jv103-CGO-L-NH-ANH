@@ -1,0 +1,107 @@
+{margin: 0; padding: 0}
+body{
+    background: aliceblue;
+    text-align: center;
+}
+#saa{
+    text-align: left;
+    width: 350px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+#saa h1 {
+    font-size: 25px;
+    text-align: center;
+    background: cornsilk;
+    margin: 5px 2px;
+}
+#saa form {
+    margin:10px 5px;
+}
+#saa form p {
+    margin:5px 5px;
+}
+#saa form p label {
+    width: 150px;
+    display : block;
+    float :left;
+}
+{margin: 0; padding: 0}
+
+#areacir{
+    text-align: left;
+    width: 350px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+#areacir h1 {
+    font-size: 25px;
+    text-align: center;
+    background: cornsilk;
+    margin: 5px 2px;
+}
+#areacir form {
+    margin:10px 5px;
+}
+#areacir form p {
+    margin:5px 5px;
+}
+#areacir form p label {
+    width: 150px;
+    display : block;
+    float :left;
+}
+#tempe{
+    text-align: left;
+    width: 350px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+#tempe h1 {
+    font-size: 25px;
+    text-align: center;
+    background: cornsilk;
+    margin: 5px 2px;
+}
+#tempe form {
+    margin:10px 5px;
+}
+#tempe form p {
+    margin:5px 5px;
+}
+#tempe form p label {
+    width: 150px;
+    display : block;
+    float :left;
+}
+#primcir {
+    text-align: left;
+    width: 350px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+#primcir h1 {
+    font-size: 25px;
+    text-align: center;
+    background: cornsilk;
+    margin: 5px 2px;
+}
+#primcir form {
+    margin:10px 5px;
+}
+#primcir form p {
+    margin:5px 5px;
+}
+#primcir form p label {
+    width: 150px;
+    display : block;
+    float :left;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME ĐOÁN SỐ</title>
+</head>
+<body>
+<form id="game">
+    <button onclick="predict(id)" type="button" value="Bấm Số">Bắt đầu trò chơi</button>
+</form>
+<script>
+    function predict() {
+        let fistNumber = prompt("nhập khoảng đầu");
+        let lastNumber = prompt("nhập số kết thúc");
+        let ram=1*Math.random();
+        let numberProgram= 1*parseInt((1*lastNumber-1*fistNumber)*ram)+1*parseInt(1*fistNumber)+1*1;
+        let playNumber = prompt("nhập số tiên đoán");
+        let cout = 1;
+        while (cout <= 4) {
+            debugger
+            if (cout < 4) {
+                if (playNumber * 1 == numberProgram) {
+                    alert("chúc mừng bạn đã đoán đúng");
+                    break;
+                } else {
+                    alert("bạn đã đoán sai vui lòng chọn lại");
+                    playNumber = prompt("nhập số tiên đoán lần 1");
+                    document.write("<p>số đoán lần" + cout+ "là : " + playNumber + "</p>");
+                }
+            }
+            cout++;
+        }
+        document.write("số chương trình đưa ra là :"+numberProgram);
+    }
+</script>
+</body>
+</html>

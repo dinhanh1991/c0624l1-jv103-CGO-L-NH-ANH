@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng Lặp For Lồng Nhau</title>
+</head>
+<body>
+<script>
+    let sout;
+    sout = "<table border='1px' width='300px' cellpadding='3px' cellspacing='0' >";
+    for (let i=1;i<11;i++){
+        sout=sout+"<tr>";
+        for(let j=1;j<10;j++)
+        {
+            sout=sout+"<td>"+i*j + "</td>";
+        }
+        sout=sout+"</td>";
+    }
+    sout=sout+"</table>";
+    document.write(sout);
+</script>
+</body>
+</html>

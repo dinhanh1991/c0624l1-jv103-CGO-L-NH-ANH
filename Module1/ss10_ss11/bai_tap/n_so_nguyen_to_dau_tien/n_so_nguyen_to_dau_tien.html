@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>N SỐ NGUYÊN TỐ ĐẦU TIÊN</title>
+</head>
+<body>
+<script>
+    let number = prompt("số lượng số nghuyên tố cần in ra là ");
+    while (number < 0) {
+        number = prompt("nhập lại số lượng :");
+    }
+    let count = 0;
+    let i;
+    let fistNumber = 2;
+    let inForm = number + " Số nguyên tố đầu tiên là "
+    while (count < number) {
+        debugger
+        let check = true;
+        for (i = 2; i < Math.sqrt(fistNumber) + 0.1; i++) {
+            if (fistNumber % i === 0) {
+                check = false;
+                break
+            }
+        }
+        if (check === true) {
+            count++
+            inForm = inForm + fistNumber + " ;";
+        }
+        fistNumber++;
+    }
+    inForm = inForm.substring(0, inForm.length - 1);
+    document.write(inForm)
+</script>
+</body>
+</html>

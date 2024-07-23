@@ -1,0 +1,45 @@
+{
+    margin: 0
+;
+    padding: 0
+}
+body {
+    background: aliceblue;
+    text-align: center;
+    font-family: "Times New Roman";
+}
+
+#caculator {
+    text-align: left;
+    color: black;
+    margin: 10px auto;
+}
+
+#caculator table {
+    text-align: left;
+    width: 250px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+
+#caculator table td input {
+    text-align: left;
+    width: 250px;
+    height: 50px;
+    color: black;
+    margin: 10px auto;
+    border: 1px solid black;
+    background: aliceblue;
+}
+
+#caculator table tr td button {
+    text-align: left;
+    width: 35px;
+    height: 20px;
+    color: black;
+    margin: 10px auto;
+    border: 1px solid black;
+    background: aliceblue;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CACULATOR</title>
+    <link rel="stylesheet" href="caculator.css">
+</head>
+<body>
+<div id="caculator">
+    <table>
+        <tr>
+            <td colspan="7"><input id="window"/></td>
+        </tr>
+        <tr>
+            <td><button onclick="radian('Rad')" >Rad</button></td>
+            <td><button onclick="nhap(',') " >, </button></td>
+            <td><button onclick="giaiThua('!')" >X!</button></td>
+            <td><button onclick="nhap('(')" >(</button></td>
+            <td><button onclick="nhap(')')" >)</button></td>
+            <td><button onclick="nhap('%')" >%</button></td>
+            <td><button onclick="xoa()" >AC</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="loga('log')" >log</button></td>
+            <td><button onclick="nhap('Math.sin')" >sin</button></td>
+            <td><button onclick="nhap('Math.log')" >ln</button></td>
+            <td><button onclick="nhap('7')" >7</button></td>
+            <td><button onclick="nhap('8')" >8</button></td>
+            <td><button onclick="nhap('9')" >9</button></td>
+            <td><button onclick="nhap('/')" >&divide;</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap('Math.PI')" >&pi;</button></td>
+            <td><button onclick="nhap('Math.cos')" >cos</button></td>
+            <td><button onclick="nhap('Math.LOG10')" >log</button></td>
+            <td><button onclick="nhap('4')" >4</button></td>
+            <td><button onclick="nhap('5')" >5</button></td>
+            <td><button onclick="nhap('6')" >6</button></td>
+            <td><button onclick="nhap('*')" >&times;</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nhap('Math.E')" >e</button></td>
+            <td><button onclick="nhap('Math.tan')" >tan</button></td>
+            <td><button onclick="nhap('Math.sqrt')" >√x</button></td>
+            <td><button onclick="nhap('1')" >1</button></td>
+            <td><button onclick="nhap('2')" >2</button></td>
+            <td><button onclick="nhap('3')" >3</button></td>
+            <td><button onclick="nhap('-')" >-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="nholai('me')" >Ans</button></td>
+            <td><button onclick="nhap('*1e')" >EXP</button></td>
+            <td><button onclick="nhap('Math.pow')" >X^y</button></td>
+            <td><button onclick="nhap('0')" >0</button></td>
+            <td><button onclick="nhap('.')" >.</button></td>
+            <td><button onclick="bang('=')" >=</button></td>
+            <td><button onclick="nhap('+')" >+</button></td>
+        </tr>
+    </table>
+</div>
+<script src="caculator.js"></script>
+</body>
+</html>

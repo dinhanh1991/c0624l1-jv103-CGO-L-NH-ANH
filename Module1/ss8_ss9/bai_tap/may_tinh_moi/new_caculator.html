@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CACULATOR</title>
+    <link href="caculator.css" rel="stylesheet">
+</head>
+<body>
+<div id="caculator">
+    <table>
+        <tr>
+            <td colspan="7"><input id="window"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button id="R" onclick="agel(this.id)">Rad</button>
+            </td>
+            <td>
+                <button id="CE" onclick="del(this.id) ">CE</button>
+            </td>
+            <td>
+                <button id="equal" onclick="giaithua(this.id)">X!</button>
+            </td>
+            <td>
+                <button id="(" onclick="ngoac(this.id)">(</button>
+            </td>
+            <td>
+                <button id=")" onclick="ngoac(this.id)">)</button>
+            </td>
+            <td>
+                <button id="%" onclick="per(this.id)">%</button>
+            </td>
+            <td>
+                <button onclick="xoa()">AC</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="10" onclick="ln10(this.id)">log</button>
+            </td>
+            <td>
+                <button id="sin" onclick="trigo(this.id)">sin</button>
+            </td>
+            <td>
+                <button id="ln" onclick="ham(this.id)">ln</button>
+            </td>
+            <td>
+                <button id="7" onclick="so(this.id)">7</button>
+            </td>
+            <td>
+                <button id="8" onclick="so(this.id)">8</button>
+            </td>
+            <td>
+                <button id="9" onclick="so(this.id)">9</button>
+            </td>
+            <td>
+                <button id="/" onclick="dau(this.id)">&divide;</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="PI" onclick="cons(this.id)">&pi;</button>
+            </td>
+            <td>
+                <button id="cos" onclick="trigo(this.id)">cos</button>
+            </td>
+            <td>
+                <button id="sqr" onclick="ham(this.id)">x^2</button>
+            </td>
+            <td>
+                <button id="4" onclick="so(this.id)">4</button>
+            </td>
+            <td>
+                <button id="5" onclick="so(this.id)">5</button>
+            </td>
+            <td>
+                <button id="6" onclick="so(this.id)">6</button>
+            </td>
+            <td>
+                <button id="*" onclick="dau(this.id)">&times;</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="e" onclick="cons(this.id)">e^x</button>
+            </td>
+            <td>
+                <button id="tan" onclick="trigo(this.id)">tan</button>
+            </td>
+            <td>
+                <button id="sqrt" onclick="ham(this.id)">√x</button>
+            </td>
+            <td>
+                <button id="1" onclick="so(this.id)">1</button>
+            </td>
+            <td>
+                <button id="2" onclick="so(this.id)">2</button>
+            </td>
+            <td>
+                <button id="3" onclick="so(this.id)">3</button>
+            </td>
+            <td>
+                <button id="-" onclick="dau(this.id)">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="Ans" onclick="callB(this.id)">Ans</button>
+            </td>
+            <td>
+                <button id="10^" onclick="dau(this.id)">EXP</button>
+            </td>
+            <td>
+                <button id="pow" onclick="dau(this.id)">X^y</button>
+            </td>
+            <td>
+                <button id="0" onclick="so(this.id)">0</button>
+            </td>
+            <td>
+                <button id="." onclick="so(this.id)">.</button>
+            </td>
+            <td>
+                <button id="=" onclick="result(this.id)">=</button>
+            </td>
+            <td>
+                <button id="+" onclick="dau(this.id)">+</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="caculator.js"></script>
+</body>
+</html>

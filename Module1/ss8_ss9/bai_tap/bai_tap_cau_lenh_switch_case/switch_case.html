@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH SỐ NGÀY</title>
+</head>
+<body>
+<div>
+    <h2>Tính Số Ngày trong tháng</h2>
+    <label for="day"></label>
+    <input type="number" name="month" id="day" />
+    <button onclick="countday()">Tính số ngày</button> <br>
+    <p id="conclution"></p>
+</div>
+<script>
+function countday(){
+    let number =+document.getElementById('day').value ;
+    let conclution;
+    switch (number){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            document.getElementById("conclution").innerText= "Tháng " +number+" có 31 ngày";
+             break;
+        case 2:
+            document.getElementById("conclution").innerText= "tháng " + number +" có 28 ngày nếu là năm nhuận có 29 ngày ";
+            break;
+        default:
+            document.getElementById("conclution").innerText= "tháng " +number+" có 30 ngày";
+    }
+}
+</script>
+</body>
+</html>

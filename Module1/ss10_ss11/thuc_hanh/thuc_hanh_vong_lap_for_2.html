@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="summary">Tổng các soos là :
+
+</p>
+<script>
+    let num = prompt("nhập số n");
+    let sum = 0;
+    let i;
+    for (i = 0; i <= num; i++) {
+        sum = sum + i;
+    }
+    document.getElementById('summary').value = sum;
+    document.write(document.getElementById("summary").value);
+</script>
+</body>
+</html>

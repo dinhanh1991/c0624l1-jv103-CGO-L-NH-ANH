@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FACTORIAL</title>
+</head>
+<body>
+<script>
+    let number = prompt("nhập số nguyên n");
+    while (number < 0) {
+        number = prompt("nhập lại số nguyên ");
+    }
+    let factorial = 1;
+    let i = 2
+    if (number === 0) {
+        document.write(number + "!= " + factorial)
+    } else {
+        while (i <= number) {
+            factorial = factorial * i;
+            i++
+        }
+        document.write(number + "!= " + factorial);
+    }
+</script>
+</body>
+</html>

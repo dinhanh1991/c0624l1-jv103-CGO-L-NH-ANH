@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TỔNG CỦA DÃY SỐ TỰ NHIÊN</title>
+</head>
+<body>
+<script>
+    let numBer1=0;
+    let numBer2=1;
+    let temper;
+    let sum=numBer1+numBer2;
+    let numberSeries = "20 số đầu tiên của dãy số là : "+numBer1+"; "+numBer2+"; ";
+    for (i=1;i<19;i++){
+        temper =numBer1;
+        numBer1=numBer2;
+        numBer2=numBer1+temper;
+        sum=sum+numBer2;
+        numberSeries=numberSeries +numBer2 +"; ";
+    }
+    numberSeries=numberSeries.substring(0,numberSeries.length-2)+"có tổng là : "+sum;
+    document.write(numberSeries)
+</script>
+</body>
+</html>

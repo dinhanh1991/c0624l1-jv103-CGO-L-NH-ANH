@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Ra Dãy Sao</title>
+</head>
+<style>
+    form{
+        text-align: center;
+    }
+
+</style>
+<body>
+<form id="ex1">
+    <button onclick="exam1()" >Bài 3.1</button>
+</form>
+<form id="ex2">
+    <button onclick="exam2()" >Bài 3.2</button>
+</form>
+<form id="ex3">
+    <button onclick="exam3()" >Bài 3.3</button>
+</form>
+<form id="ex4">
+    <button onclick="exam4()">Bài 3.4 </button>
+</form>
+<script>
+    function exam1(){
+        let i;
+        let j=0;
+        let inForm="";
+        for(i=0;i<=4;i++){
+            for (j=0;j<=i;j++){
+                inForm=inForm+"*";
+            }
+            inForm=inForm+"<br>";
+        }
+        document.write(inForm)
+    }
+    function exam2(){
+        let i;
+        let j=0;
+        let inForm="";
+        for(i=0;i<=4;i++){
+            for (j=4;j>=i;j--){
+                inForm=inForm+"*";
+            }
+            inForm=inForm+"<br>";
+        }
+        document.write(inForm)
+    }
+    function exam3() {
+        let i;
+        let j;
+        let star="";
+        for ( i = 0; i<5; i++) {
+            debugger
+            for (j=0;j<=4;j++)
+                if (j<4-i){
+                    star=star+"&nbsp;&nbsp;";
+                }else{
+                    star=star+"*";
+                }
+            star=star+'<br>'
+        }
+        document.write(star);
+    }
+    function exam4() {
+        let i;
+        let j;
+        let star="";
+        for (i = 0; i<5; i++) {
+            debugger
+            for (j=0;j<=4;j++)
+                if (j<i){
+                    star=star+"&nbsp;&nbsp;bsp&n;";
+                }else{
+                    star=star+"*";
+                }
+            star=star+'<br>'
+        }
+        document.write(star);
+    }
+
+</script>
+</body>
+</html>

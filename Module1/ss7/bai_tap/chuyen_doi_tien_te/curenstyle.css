@@ -1,0 +1,31 @@
+{margin: 0; padding: 0}
+body{
+    background: aliceblue;
+    text-align: center;
+}
+#currency {
+    text-align: left;
+    width: 350px;
+    color: black;
+    margin: 10px auto;
+    border: 5px solid #0099CC;
+    background: aliceblue;
+}
+#currency h1 {
+    font-size: 25px;
+    text-align: center;
+    background: cornsilk;
+    margin: 5px 2px;
+}
+#currency form {
+    margin:10px 5px;
+}
+#currency form p {
+    margin:5px 5px;
+}
+#currency form p label {
+    width: 100px;
+    display : block;
+    float :left;
+}
+

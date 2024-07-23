@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUYỂN ĐỔI TIỀN TỆ</title>
+    <link rel="stylesheet" type="text/css"href="curenstyle.css">
+</head>
+<body>
+<div id="currency">
+    <h1>Chuyển Đổi Tiền Tệ</h1>
+    <form name="curr">
+       <p>
+        <label for="texcurr">Amount</label>
+        <input type="number"name="texcurr"id="texcurr"/>
+        </p>
+         <p>
+            <label for="fromcurr">From Currency</label>
+           <select name="fromcurrency" id="fromcurr">
+            <option value="VND" >Viet Nam</option>
+            <option value="USD">USD </option>
+           </select>
+        </p>
+        <p>
+            <label for="tocurr">To Currency</label>
+            <select name="tocurrency" id="tocurr">
+                <option value="VND" >Viet Nam</option>
+                <option value="USD">USD </option>
+            </select>
+        </p>
+        <p>
+            <label for="result">Result</label>
+            <input type="number"name="result"id="result" readonly="readonly"/>
+        </p>
+        <p class="buttons">
+            <input type="button" name="done" value="Convert"/>
+        </p>
+    </form>
+</div>
+<script src="curency.js"></script>
+</body>
+</html>

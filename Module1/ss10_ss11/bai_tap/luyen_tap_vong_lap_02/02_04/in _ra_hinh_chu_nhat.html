@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HÌNH CHỮ NHẬT SAO</title>
+</head>
+<body>
+<script>
+    let i;
+    let j;
+    let star1="";
+    let star2="";
+    for(i=0;i<20;i++){
+        star1=star1 +"*";
+    }
+    star1=star1+"<br>";
+    for (i=1;i<=5;i++){
+        debugger
+        for (j=0;j<22;j++){
+            if(j===0||j===19){
+                star2=star2+"*";
+            }else {
+                star2=star2+"&nbsp;&nbsp;";
+            }
+        }
+        star2=star2+"<br>";
+    }
+    let rec=star1+star2+star1;
+    document.write(rec)
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numBer1=0;
+    let numBer2=1;
+    let temp;
+    for (i=1;i<19;i++){
+        temp =numBer1;
+        numBer1=numBer2;
+        numBer2=numBer1+temp;
+        if(numBer2%5===0){
+            document.write("số đầu tiên chia hết cho 5 của dãy Fibonaci là:"+numBer2)
+            break;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BIẾN KIỂU DỮ LIỆU VÀ TOÁN TỬ</title>
+    <link rel="stylesheet" type="text/css" href="homwork.css">
+</head>
+<body>
+<div id="saa">
+    <h1>TÍNH ĐIỂM TRUNG BÌNH</h1>
+    <form name="sumavg">
+       <p>
+        <label for="physic">Vật Lý</label>
+        <input type="number" name="physic" id="physic"/>
+        </p>
+        <p>
+            <label for="chemistry">Hóa Học</label>
+            <input type="number" name="chemistry" id="chemistry"/>
+        </p>
+        <p>
+            <label for="biology">Sinh Học</label>
+            <input type="number" name="biology" id="biology"/>
+        </p>
+        <p>
+            <label for="avg">Điểm Trung Bình</label>
+            <input type="number" name="avg" id="avg" readonly="readonly"/>
+        </p>
+        <p>
+            <label for="sum">Điểm Tổng</label>
+            <input type="number" name="sum" id="sum" readonly="readonly"/>
+        </p>
+        <p class="buttons">
+            <input type="button" name="done" value="Tính"/>
+        </p>
+    </form>
+</div>
+<div id="tempe">
+    <h1>Chuyển Độ C Sang Độ F</h1>
+    <form name="temp">
+        <p>
+            <label for="Degry Celsius">Độ C</label>
+            <input type="number" name="dc" id="Degry Celsius"/>
+        </p>
+        <p>
+            <label for="Degry Fahr">Độ F</label>
+            <input type="number" name="df" id="Degry Fahr"/>
+        </p>
+        <p class="buttons">
+            <input type="button" name="convert" value="Tính"/>
+        </p>
+    </form>
+</div>
+<div id="areacir">
+    <h1>Diện Tích Hình Tròn</h1>
+    <form name="areac">
+        <p>
+            <label for="radius">Bán Kính</label>
+            <input type="number" name="radius" id="radius"/>
+        </p>
+        <p>
+            <label for="area">Diện Tích</label>
+            <input type="number" name="result" id="area" readonly="readonly"/>
+        </p>
+        <p class="buttons">
+            <input type="button" name="done" value="Tính"/>
+        </p>
+
+    </form>
+</div>
+<div id="primcir">
+    <h1>Chu Vi Hình Tròn</h1>
+    <form name="pri">
+        <p>
+            <label for="radius2">Bán Kính</label>
+            <input type="number" name="radius2" id="radius2"/>
+        </p>
+        <p>
+            <label for="primeter">Chu Vi </label>
+            <input type="number" name="result" id="primeter" readonly="readonly"/>
+        </p>
+        <p class="buttons">
+            <input type="button" name="action" value="Tính"/>
+        </p>
+
+    </form>
+</div>
+<script src="homwork.js"></script>
+</body>
+</html>

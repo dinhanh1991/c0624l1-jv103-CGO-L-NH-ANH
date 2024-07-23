@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1: kiểm tra a có chia hết cho b</button>
+<p id="check1"></p>
+<button onclick="bai2()">Bài 2: kiểm tra điều kiện vào lớp 10</button>
+<p id="check2"></p>
+<button onclick="bai3()">Bài 3: Kiểm tra số lớn hơn không hay nhỏ hơn không</button>
+<p id="check3"></p>
+<button onclick="bai4()">Bài 4: tìm giá trị lớn nhất của 3 số a,b,c</button>
+<p id="check4"></p>
+<button onclick="bai5()">Bài 5: Xếp hạng học lực của học sinh</button>
+<p id="check5"></p>
+<button onclick="bai6()">Bài 6: Hoa hồng nhận được theo doanh số bán hàng</button>
+<p id="check6"></p>
+<button onclick="bai7()">Bài 7: Cước điện thoai</button>
+<p id="check7"></p>
+<script>
+    // Bài 1
+    function bai1() {
+        let numberA = prompt('nhập số a');
+        let numberB = prompt('nhập số b');
+        if (numberA % numberB == 0) {
+            document.getElementById("check1").innerText = "số a chia hết cho b";
+        } else {
+            document.getElementById("check1").innerText = "số a không chia hết cho b";
+        }
+    }
+
+    // Bài 2
+    function bai2() {
+        let age = prompt("nhập số tuổi của học sinh")
+        if (age >= 16) {
+            document.getElementById("check2").innerText = "số tuổi là: " + age + "nên học sinh đủ tuổi để vào lớp 10";
+        } else {
+            document.getElementById("check2").innerText = "số tuổi là: " + age + "nên học sinh chưa đủ tuổi để vào lớp 10";
+        }
+    }
+
+    // bài 3
+    function bai3() {
+        let int = prompt("nhập số nguyên: ");
+        if (int < 0) {
+            document.getElementById('check3').innerText = "số " + int + " là số âm";
+        } else if (int > 0) {
+            document.getElementById('check3').innerText = "số " + int + " là số dương";
+        } else {
+            document.getElementById('check3').innerText = "số " + int + " không phải là là số nguyên dương cũng không phải là số nguyên âm";
+        }
+    }
+
+    //bài 4
+    function bai4() {
+        let number1 = prompt('nhập số thứ nhât a=');
+        let number2 = prompt('nhập số thứ hai b=');
+        let number3 = prompt('nhập số thứ ba c=');
+        if (number1 > number2 && number1 > number3) {
+            document.getElementById('check4').innerText = "số a= " + number1 + "là số lớn nhất";
+        } else if (number2 > number3) {
+            document.getElementById('check4').innerText = "số b= " + number2 + "là số lớn nhất";
+        } else {
+            document.getElementById('check4').innerText = "số c= " + number3 + "là số lớn nhất";
+        }
+    }
+
+    // bài 5
+    function bai5() {
+        let score1 = prompt('nhập điểm kiểm tra :');
+        let score2 = prompt('nhập điểm thi giữa kỳ :');
+        let score3 = prompt('nhập điểm thi cuối kỳ :');
+        let avg = (score1 * 1 + 2 * score2 + 3 * score3) / 6;
+        if (avg < 4.0) {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực yếu";
+        } else if (avg < 5.0) {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực kém";
+        } else if (avg < 6.5) {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực trung bình";
+        } else if (avg < 8.0) {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực khá";
+        } else if (avg < 9.0) {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực giỏi";
+        } else {
+            document.getElementById('check5').innerText = "điểm trung bình= " + avg + "xếp loại học lực xuất sắc";
+        }
+
+    }
+
+    //bài 6
+    function bai6() {
+        let sale = prompt('nhập doanh thu :');
+        let reward;
+        if (sale < 1 * Math.pow(10, 9)) {
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "dưới 1 tỷ không được tính hoa hồng";
+        } else if (sale < 1.2 * Math.pow(10, 9)) {
+            reward = 0.1 * (sale - Math.pow(10, 9));
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "hoa hồng nhận được là :" + reward;
+        } else if (sale < 1.5 * Math.pow(10, 9)) {
+            reward = 0.11 * (sale - Math.pow(10, 9));
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "hoa hồng nhận được là :" + reward;
+        } else if (sale < 1.7 * Math.pow(10, 9)) {
+            reward = 0.12 * (sale - Math.pow(10, 9));
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "hoa hồng nhận được là :" + reward;
+        } else if (sale < 2.0 * Math.pow(10, 9)) {
+            reward = 0.13 * (sale - Math.pow(10, 9));
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "hoa hồng nhận được là :" + reward;
+        } else {
+            reward = 0.15 * (sale - Math.pow(10, 9));
+            document.getElementById('check6').innerText = "doanh thu là: " + sale + "hoa hồng nhận được là :" + reward;
+        }
+
+    }
+
+    function bai7() {
+        alert('để tính đúng vui lòng nhap úng hình thuc bao gồm :noi hat, lien tinh noi mang,lien tỉnh ngoai mang');
+        let minus = prompt('nhập số phut');
+        if (minus < 0) {
+            alert("số phút phải lớn hơn 0");
+        } else {
+            let form = prompt('nhập hinnh thuc');
+            if (form === "noi hat") {
+                let price = 20000 + minus * 200;
+                document.getElementById('check7').innerText = "Số cước là:" + price;
+            } else if (form === "lien tinh noi mang") {
+                price = 20000 + minus * 800;
+                document.getElementById('check7').innerText = "Số cước là:" + price;
+            } else if (form === "lien tinh ngoai mang") {
+                price = 20000 + minus * 800;
+                document.getElementById('check7').innerText = "Số cước là:" + price;
+            } else {
+                document.getElementById('check7').innerText = "hinh thuc sai vui long nhap lai ";//
+            }
+        }
+    }
+</script>
+</body>
+</html>
