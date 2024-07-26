@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÌM GIÁ TRỊ CỦA MẢNG</title>
+</head>
+<body>
+<script>
+    let numberLength =prompt("nhập số phần tử của mảng");
+    let i;
+    let arr=[];
+    for(i=0; i<numberLength;i++){
+        arr[i]=prompt('nhập phần tử thứ '+i+" của mảng");
+    }
+    let count=0;
+    let value= prompt('nhập số cần kiểm tra');
+    for (i=0;i<arr.length;i++){
+        if (value===arr[i]){
+            count++;
+        }
+    }
+    if (count>0){
+        alert('số kiểm tra có trong mảng');
+    }else {
+        alert('số dẫ cho không trùng với mảng');
+    }
+</script>
+</body>
+</html>

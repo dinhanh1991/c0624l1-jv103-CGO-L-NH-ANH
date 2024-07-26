@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SỬ DỤNG HÀM CÓ SẴN-03</title>
+</head>
+<body>
+<script>
+    let uperCase = "ABCDEFGHIJKLMNOPQRSTUVXWYZ";
+    let lowCase = "abcdefghijklmnopqrstuvxwyz";
+    let myString=prompt("nhập đoạn text");
+    myString2=myString.toString()
+    let i;
+    let result =[];
+    for (i=0;i<myString2.length;i++){
+        debugger
+        if (uperCase.indexOf(myString2[i]) !== -1){
+            result.push(myString2[i].toLowerCase());
+        }else if(lowCase.indexOf(myString2[i])!==-1){
+            result.push(myString2[i].toUpperCase());
+        }else {
+            result.push(myString2[i]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+</body>
+</html>

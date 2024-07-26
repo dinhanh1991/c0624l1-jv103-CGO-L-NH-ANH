@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SỬ DỤNG HÀM CÓ SẴN-02</title>
+</head>
+<body>
+<script>
+    let myNumber = prompt("nhập dãy số");
+    let myString = myNumber.toString();
+    let result = [myString[0]];
+    for (let i = 0; i < myString.length - 1; i++) {
+        if (myString[i] % 2 === 0 && myString[i + 1] % 2 === 0) {
+            result.push('-', myString[i + 1]);
+        } else {
+            result.push(myString[i + 1]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+</body>
+</html>

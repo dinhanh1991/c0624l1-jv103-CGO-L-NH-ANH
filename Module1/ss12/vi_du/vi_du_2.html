@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VÍ DỤ HÀM CỦA MẢNG 2</title>
+</head>
+<body>
+<script>
+    let course = [
+        {
+            id: 1,
+            name: 'javascript',
+            coin: 250
+        },
+        {
+            id: 2,
+            name: 'HTML, CSS',
+            coin: 200
+        },
+        {
+            id: 3,
+            name: 'RUBY',
+            coin: 0
+        },
+        {
+            id: 4,
+            name: 'PHP',
+            coin: 0
+        },
+        {
+            id: 5,
+            name: 'ReactJS',
+            coin: 400
+        },
+    ]
+    // // for each :duyetj qua từng phần tử của mảng.
+    // // gọi
+    // // course.forEach(function (course, index) {
+    // //     console.log(index, course)
+    // });
+    // every() tương tự for each kt tất cả các phần tử của mảng thỏa mãn dk gì đó trả về kiểu boolen
+    let isFree = course.every(function (course, index) {
+        return course.coin === 0;
+    })
+    console.log(isFree);
+    // trả lại phần tử khi nó duyện qua giông or
+    // find tìm phần tử trong mảng
+    // let courses = course.find(function (courses, index) {
+    //     return courses.name === 'RUBY';
+    // })
+    // console.log(courses);
+    // map() thay đổi elements của array
+    //     function courseHandler(course,index){
+    //         return{
+    //             id: course.id,
+    //             name:`khóa hoc : ${course.name}`,
+    //             coin:course.coin,
+    //             cointexxt:`giá : ${course.coin}`,
+    //             index:index,
+    //         };
+    //     }
+    //     let newCourses = course.map(courseHandler)
+    // console.log(newCourses);
+    // hàm redue tương tự xử dụng vong lặp arr.reduce(funtion,giá tri khới tạo)
+    let i = 0
+    function coilHandler(accumulator, curenValue, curenIndex, originArray) {
+        let total = accumulator + curenValue.coin;
+        i++;
+        console.table({
+            'Lượt chạy': i,
+            'biến tích trũ': accumulator,
+            'giá khóa hoc': curenValue.coin
+        });
+        return total;
+    }
+
+    let totalCoin = course.reduce(coilHandler, 0);
+    console.log(totalCoin);
+</script>
+</body>
+</html>

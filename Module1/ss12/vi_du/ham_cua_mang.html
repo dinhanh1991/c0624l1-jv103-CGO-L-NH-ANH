@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VÍ DỤ HÀM CỦA MẢNG</title>
+</head>
+<body>
+<script>
+    let arr=[
+        'javascript',
+        'Java',
+        'C++',
+        'pascal'
+    ];
+    // chuyển sang kiểu chuỗi to string ngăn cách bằng dấu , không thể đổi dấu ,
+    console.log(arr.toString());
+   // hàn join hàm chuyển mảng thành chuỗi và thay ngăn cách cÁC phần tử bằng dấu câu
+    console.log(arr.join('-'));
+    // hàm pop xóa đi phần tử cuối mảng và trả về phần tử đã xóa
+    console.log(arr.pop());
+    // push thêm một phần tử cuối mảng
+    console.log(arr.push('Dart','pascal'));
+    // shift xóa phần tử đầu của mảng.
+    console.log(arr.shift())
+    console.log(arr)
+    // unshift thêm phần tử đầu mảng
+    console.log(arr.unshift('javascript'))
+    // hàm splice xóa phần tử và chèn phần tử câu lênh array.splice(a,b,c)
+    // a vị trí đặt con trỏ, b : từ vị trí đặt con trỏ xóa mất mấy phần tử, c là phần tử thêm vào.
+    // concat nối 2 array
+    let arr2 = ['ruby','PHP'];
+    let newArr=arr.concat(arr2);
+    console.log(newArr);
+    // hàm slice(star, end)tham số 1 là vị trí bắt đầu end vị trí kết thúc
+    console.log(newArr.slice(4,5))
+    // for in  array trả về các vị trí của mảng
+    for (let key in newArr){
+        console.log(newArr[key])
+    }
+    // trả ra các giá trị của mảng
+    for(let value of newArr){
+        console.log(value)
+    }
+</script>
+
+</body>
+</html>
