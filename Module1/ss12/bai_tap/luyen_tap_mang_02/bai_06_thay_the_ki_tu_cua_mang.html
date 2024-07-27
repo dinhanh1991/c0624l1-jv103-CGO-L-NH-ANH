@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THAY THẾ KÝ TỰ CỦA MẢNG</title>
+</head>
+<body>
+<script>
+    let number =+prompt('nhập số giá trị của mảng');
+    let array=[];
+    for(let i=0;i<number;i++){
+        array[i]=prompt('nhập phần tử thứ '+i+' của mảng');
+    } document.write('mảng được tạo ra là: '+ array+' .<br>')
+    for(let key in array){
+        if(array[key]==='-'){
+            array[key]='_';
+        }
+    }
+    document.write('Mảng mới là: '+array);
+</script>
+</body>
+</html>

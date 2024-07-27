@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẾM SỐ KÝ TỰ TRONG MẢNG</title>
+</head>
+<body>
+<script>
+    let stringArray = [];
+    let number = +prompt('nhập đọ dài của mảng');
+    let i;
+    for (i = 0; i < number; i++) {
+        stringArray[i] = prompt('nhập phần tủ thứ ' + i)
+    }
+    let count = 0;
+    document.write('mảng đã cho là: ' + stringArray + '<br>');
+    for (let value of stringArray) {
+        debugger
+        let i = Math.abs(value)+0.1;
+        if (typeof i === 'number'&& i) {
+            count++;
+        }
+    }
+    document.write('Mảng có ' + count + ' phần tử là ký tự số');
+</script>
+</body>
+</html>

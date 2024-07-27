@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẾM SỐ TỪ TRONG MỘT CHUỖI</title>
+</head>
+<body>
+<script>
+    let myString = prompt('nhập chuỗi ký tự');
+    let count = 1;
+    document.write('chuỗi ban đầu là: ' + myString + '. ');
+    let newString = myString.trim();
+    for (let i = 1; i < newString.length; i++) {
+        if (newString[i - 1] === " " && newString[i] !== " ") {
+            count++;
+        }
+    }
+    document.write('Có ' + count + ' từ');
+</script>
+</body>
+</html>
