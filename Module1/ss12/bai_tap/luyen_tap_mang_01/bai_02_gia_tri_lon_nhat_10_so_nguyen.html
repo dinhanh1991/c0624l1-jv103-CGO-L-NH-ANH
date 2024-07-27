@@ -7,7 +7,7 @@
 <body>
 <script>
     let numberArray = [];
-    let i
+    let i;
     for (i = 0; i < 10; i++) {
         numberArray[i] = +prompt('nhập số thứ ' + i + ' :');
     }
@@ -23,15 +23,15 @@
         return max;
     }
 
-    maxArray = maxNumber(numberArray);
-    let postion = 'giá trị max nằm ở vị trí thứ '
+    let maxArray = maxNumber(numberArray);
+    let position = 'giá trị max nằm ở vị trí thứ ';
     for (let key in numberArray) {
         if (numberArray[key] === maxArray) {
-            postion = postion + key + ' ';
+            position = position + key + ' ';
         }
     }
     document.write('giá trị lớn nhất của dãy số là: ' + maxArray + "<br>");
-    document.write(postion);
+    document.write(position);
 </script>
 </body>
 </html>

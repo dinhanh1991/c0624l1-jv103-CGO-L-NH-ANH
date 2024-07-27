@@ -14,21 +14,24 @@
     }
     document.write('Dãy số nguyên là: ' + intArr + '<br>');
     let intV = +prompt('nhập số nguyên V');
-    newArr = []
-    for (let key in intArr) {
-        debugger
-        if (intV !== intArr[key]) {
-            newArr.push(intArr[key]);
-        }
-    }
-    if (newArr.length === intArr.length) {
-        document.write('số V không có trong dãy số nguyên đã cho');
-    } else {
-        while (newArr.length < intArr.length) {
-            newArr.push(0);
-        }
-        document.write('dãy số mới là' + newArr);
-    }
+    let count=0;
+   for( i=0;i<intArr.length;i++){
+       for (let m=0;m<intArr.length;m++)
+       if (intArr[m]===intV){
+           count++;
+           for(let j=m;j<intArr.length;j++){
+               intArr[j]=intArr[j+1];
+           }
+       }
+   }
+   if (count!==0){
+       for(i=0;i<count;i++){
+           intArr[intArr.length-1-i]=0;
+       }
+      document.write(intArr);
+   }else {
+       document.write('không tìm thấy số V trong mảng');
+   }
 </script>
 </body>
 </html>
