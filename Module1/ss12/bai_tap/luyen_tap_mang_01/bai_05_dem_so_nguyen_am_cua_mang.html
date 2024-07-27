@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẾM SỐ NGUYÊN ÂM CỦA MẢNG</title>
+</head>
+<body>
+<script>
+    let myString = prompt('nhập một chuỗi');
+    let vowelString = 'aăâeêioôơuư';// Nguyên âm tiếng việt
+    let count = 0;
+    for (let value of myString) {
+        debugger
+        if (vowelString.indexOf(value) !== -1) {
+            count++;
+        }
+    }
+    document.write('chuỗi: ' + myString + '. có ' + count + ' nguyên âm');
+</script>
+</body>
+</html>

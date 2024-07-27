@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SẮP XẾP THEO THỨ TỰ GIẢM DẦN</title>
+</head>
+<body>
+<script>
+let number = +prompt('nhập số lượng phần tử của dãy số nguyên');
+let intArr =[];
+let temp;
+let i;
+for (i = 0; i < number; i++) {
+intArr[i] = +prompt('nhập số thứ ' + i + ' của dãy số nguyên');
+}
+document.write('Dãy số nguyên là: ' + intArr + '<br>');
+for(i=0;i<intArr.length;i++){
+    debugger
+    for (let j=intArr.length-1;j>i;j--){
+        if(intArr[i]<intArr[j]){
+            temp=intArr[i];
+            intArr[i]=intArr[j];
+            intArr[j]=temp;
+        }
+    }
+}
+document.write('dãy số được sắp xếp lại là'+intArr )
+</script>
+</body>
+</html>

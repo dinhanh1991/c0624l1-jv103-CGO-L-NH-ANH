@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIÁ TRỊ LỚN NHẤT VÀ GIÁ TRỊ TRUNG BÌNH</title>
+</head>
+<body>
+<script>
+    let intArray = [];
+    let i;
+    for (i = 0; i < 10; i++) {
+        intArray[i] = +prompt('nhập số nguyên thứ ' + i);
+    }
+    document.write('Dãy số nguyên là: ' + intArray + "<br>");
+    let max = 0;
+    let avg;
+    let sum = +0;
+    for (let value of intArray) {
+        debugger
+        if (value > max) {
+            max = value;
+        }
+        sum = sum + value;
+    }
+    avg = sum / intArray.length;
+    document.write('Dãy số có giá trị trung bình là: ' + avg + '<br>');
+    document.write('Giá trị lớn nhất của dãy số là: ' + max);
+</script>
+</body>
+</html>

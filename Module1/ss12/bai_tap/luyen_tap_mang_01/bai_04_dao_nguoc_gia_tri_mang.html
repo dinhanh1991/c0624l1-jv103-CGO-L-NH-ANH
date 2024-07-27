@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẢO NGƯỢC GIÁ TRỊ MẢNG</title>
+</head>
+<body>
+<script>
+    let number = +prompt('nhập số lượng phần tử của dãy số nguyên');
+    let intArr = [];
+    let i;
+    for (i = 0; i < number; i++) {
+        intArr[i] = prompt('nhập số thứ ' + i + ' của dãy số nguyên');
+    }
+    document.write('Dãy số nguyên là: ' + intArr + '<br>');
+    let j = 0;
+    i--;
+    while (j < i) {
+        let temp = intArr[j];
+        intArr[j] = intArr[i];
+        intArr[i] = temp;
+        j++;
+        i--;
+    }
+    document.write('Dãy số đảo ngược dãy số đã cho là: ' + intArr);
+</script>
+</body>
+</html>

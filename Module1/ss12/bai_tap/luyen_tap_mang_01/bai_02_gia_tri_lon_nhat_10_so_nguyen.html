@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIÁ TRỊ LỚN NHẤT CỦA 10 SỐ NGUYÊN</title>
+</head>
+<body>
+<script>
+    let numberArray = [];
+    let i
+    for (i = 0; i < 10; i++) {
+        numberArray[i] = +prompt('nhập số thứ ' + i + ' :');
+    }
+    document.write("dãy số đã cho là [" + numberArray + "]");
+
+    function maxNumber(arr) {
+        let max = arr[0];
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[j] > max) {
+                max = arr[j];
+            }
+        }
+        return max;
+    }
+
+    maxArray = maxNumber(numberArray);
+    let postion = 'giá trị max nằm ở vị trí thứ '
+    for (let key in numberArray) {
+        if (numberArray[key] === maxArray) {
+            postion = postion + key + ' ';
+        }
+    }
+    document.write('giá trị lớn nhất của dãy số là: ' + maxArray + "<br>");
+    document.write(postion);
+</script>
+</body>
+</html>

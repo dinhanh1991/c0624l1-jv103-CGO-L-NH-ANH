@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt('nhập số lượng phần tử của dãy số nguyên');
+    let intArr = [];
+    let i;
+    for (i = 0; i < number; i++) {
+        intArr[i] = +prompt('nhập số thứ ' + i + ' của dãy số nguyên');
+    }
+    document.write('Dãy số nguyên là: ' + intArr + '<br>');
+    let intV = +prompt('nhập số nguyên V');
+    newArr = []
+    for (let key in intArr) {
+        debugger
+        if (intV !== intArr[key]) {
+            newArr.push(intArr[key]);
+        }
+    }
+    if (newArr.length === intArr.length) {
+        document.write('số V không có trong dãy số nguyên đã cho');
+    } else {
+        while (newArr.length < intArr.length) {
+            newArr.push(0);
+        }
+        document.write('dãy số mới là' + newArr);
+    }
+</script>
+</body>
+</html>
