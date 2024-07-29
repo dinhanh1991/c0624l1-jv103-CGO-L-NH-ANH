@@ -3,8 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <title>GAME TIC TAC TOE</title>
+    <style>
+        body {
+            background: beige;
+        }
+
+        table {
+            border: 1px solid black;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+        td:hover {
+            background: #a0905f;
+        }
+    </style>
 </head>
 <body>
+<h1>Cờ Caro</h1>
+<div id="button">
+    <button onclick="begin()">Play</button>
+    <button>00:00:00</button>
+    <button>Player</button>
+</div>
+<div id="screen"></div>
+<script>
+    let caroArray = [];
+    let isPlayer = true;
 
+    function begin() {
+        let rowTable = +prompt('nhập số hàng');
+        let columnTable = +prompt('nhập số cột');
+        for (let i = 0; i < rowTable; i++) {
+            caroArray[i] = [];
+            for (let j = 0; j < columnTable; j++) {
+                caroArray[i][j] = "";
+            }
+        }
+        show()
+    }
+
+    function show() {
+        let tableCaro = "<table>";
+        for (let i = 0; i < caroArray.length; i++) {
+            tableCaro = tableCaro + "<tr>";
+            for (let j = 0; j < caroArray.length; j++) {
+                tableCaro = tableCaro + `<td onclick="play(${i},${j})">${caroArray[i][j]}</td>`;
+            }
+            tableCaro = tableCaro + `</tr>`;
+        }
+        tableCaro = tableCaro + `</table>`;
+        document.getElementById(`screen`).innerHTML = tableCaro;
+    }
+
+    function play(i, j) {
+        if (cellEmpty(i, j)) {
+            if (isPlayer) {
+                caroArray[i][j] = `x`;
+                isPlayer = false;
+                if (winAndLost("x")) {
+                    alert('X thắng');
+                }
+            } else {
+                caroArray[i][j] = `0`;
+                isPlayer = true
+                if (winAndLost("0")) {
+                    alert('0 thắng');
+                }
+            }
+        } else {
+            alert('ô đã đánh dấu rồi')
+        }
+
+        show()
+    }
+
+    function cellEmpty(i, j) {
+        return caroArray[i][j] === '';
+    }
+
+    function winAndLost(value) {
+        for (let i = 0; i < caroArray.length; i++) {
+            for (let j = 0; j < caroArray.length; j++) {
+                let checkVertical = caroArray[i][j] === value
+                    && caroArray[i + 1][j] === value
+                    && caroArray[i + 2][j] === value
+                    && caroArray[i + 3][j] === value
+                    && caroArray[i + 4][j] === value;
+                let checkHorizontal = caroArray[i][j] === value
+                    && caroArray[i][j + 1] === value
+                    && caroArray[i][j + 2] === value
+                    && caroArray[i][j + 3] === value
+                    && caroArray[i][j + 4] === value;
+                let checkDiagonal = caroArray[i][j] === value
+                    && caroArray[i + 1][j + 1] === value
+                    && caroArray[i + 2][j + 2] === value
+                    && caroArray[i + 3][j + 3] === value
+                    && caroArray[i + 4][j + 4] === value;
+                let checkDiagonalA = caroArray[i][j] === value
+                    && caroArray[i + 1][j - 1] === value
+                    && caroArray[i + 2][j - 2] === value
+                    && caroArray[i + 3][j - 3] === value
+                    && caroArray[i + 4][j - 4] === value;
+                if (checkHorizontal) {
+                    return true;
+                }
+                if (checkVertical) {
+                    return true;
+                }
+                if (checkDiagonal) {
+                    return true;
+                }
+                if (checkDiagonalA) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+</script>
 </body>
 </html>
