@@ -28,8 +28,6 @@
 <h1>Cờ Caro</h1>
 <div id="button">
     <button onclick="begin()">Play</button>
-    <button>00:00:00</button>
-    <button>Player</button>
 </div>
 <div id="screen"></div>
 <script>
@@ -110,16 +108,8 @@
                     && caroArray[i + 2][j - 2] === value
                     && caroArray[i + 3][j - 3] === value
                     && caroArray[i + 4][j - 4] === value;
-                if (checkHorizontal) {
-                    return true;
-                }
-                if (checkVertical) {
-                    return true;
-                }
-                if (checkDiagonal) {
-                    return true;
-                }
-                if (checkDiagonalA) {
+                if (checkHorizontal||checkVertical||checkDiagonal||checkDiagonalA)
+                {
                     return true;
                 }
             }
