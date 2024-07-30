@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TẠO HÀM HAI ĐỐI SỐ</title>
+</head>
+<body>
+<script>
+    function display(number1, number2) {
+        if (number1 > number2) {
+            alert('number1 is greater than number2');
+        } else {
+            return number1 + number2;
+        }
+    }
+
+    let value1 = +prompt('nhập số thứ nhất');
+    let value2 = +prompt('nhập số thứ hai');
+    let result = display(value1, value2);
+    document.write(result);
+</script>
+</body>
+</html>

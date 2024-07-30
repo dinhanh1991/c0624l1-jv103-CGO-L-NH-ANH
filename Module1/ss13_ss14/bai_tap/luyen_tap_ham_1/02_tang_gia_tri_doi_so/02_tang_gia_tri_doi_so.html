@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tăng giá trị đối số</title>
+</head>
+<body>
+<p>Đối số&nbsp;&nbsp;
+    <input id="argument" type="number">
+</p>
+<p>Kết quả
+    <input id="result" readonly="readonly" type="number">
+</p>
+<button onclick="callBack()">Function</button>
+<script>
+    function number(num) {
+        return num + 1;
+    }
+
+    function callBack() {
+        let value = +document.getElementById('argument').value;
+        document.getElementById('result').value = number(value);
+    }
+</script>
+</body>
+</html>

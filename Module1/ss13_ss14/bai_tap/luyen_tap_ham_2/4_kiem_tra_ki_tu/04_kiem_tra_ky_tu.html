@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KIỂM TRA KÝ  TỰ</title>
+</head>
+<body>
+<script>
+    function isNumber(string){
+       let test =Math.abs(string)+1;
+       if (typeof test==='number'&&test){
+           return true;
+       }else {
+           return false;
+       }
+    }
+    let value =prompt('nhập ký tự');
+    let result=isNumber(value);
+    console.log(result);
+</script>
+</body>
+</html>

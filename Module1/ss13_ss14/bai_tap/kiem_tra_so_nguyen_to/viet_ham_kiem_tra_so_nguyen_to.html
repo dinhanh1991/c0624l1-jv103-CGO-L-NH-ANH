@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HÀM KIỂM TRA SỐ NGUYÊN TỐ</title>
+</head>
+<body>
+<script>
+    function checkPrimeNumber(number) {
+        let i;
+        let inspection = true;
+        if (number <= 1) {
+            inspection = false;
+        } else if (number <= 3) {
+            inspection = true;
+        } else {
+            for (i = 2; i < Math.sqrt(number) + 0.1; i++) {
+                if (number % i === 0) {
+                    inspection = false;
+                }
+            }
+        }
+        return inspection;
+    }
+
+    let number = +prompt('nhập số nguyên cần kiểm tra');
+    if (checkPrimeNumber(number)) {
+        document.write(`${number} là số nguyên tố`);
+    } else {
+        document.write(`${number} không phải số nguyên tố`);
+    }
+</script>
+</body>
+</html>

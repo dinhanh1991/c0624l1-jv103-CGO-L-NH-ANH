@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐỔI ĐƠN VỊ ĐỌ DÀI</title>
+</head>
+<body>
+<form>
+    <p onclick="convert1()">
+        <label>
+            <input id="foot" type="text"/>ft&DoubleLongRightArrow;
+            <input id="meter" readonly="readonly" type="text">m
+        </label>
+    </p>
+    <p onclick="convert2()">
+        <label>
+            <input id="meter2" type="text"/>m&DoubleLongRightArrow;
+            <input id="foot2" readonly="readonly" type="text">ft
+        </label>
+    </p>
+</form>
+<script>
+    function covertFootToMeter(number) {
+        return number * 0.305;
+    }
+
+    function convertMeterToFoot(number) {
+        return number / 0.305
+    }
+
+    function convert1() {
+        let foot = document.getElementById('foot').value;
+        document.getElementById('meter').value = covertFootToMeter(foot);
+    }
+
+    function convert2() {
+        let meter = document.getElementById('meter2').value;
+        document.getElementById('foot2').value = convertMeterToFoot(meter);
+    }
+</script>
+</body>
+</html>

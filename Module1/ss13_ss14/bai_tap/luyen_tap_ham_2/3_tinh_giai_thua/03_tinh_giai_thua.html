@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÍNH GIAI THỪA</title>
+</head>
+<body>
+<script>
+    function findFactorial(number){
+        if(number>1){
+            return number*findFactorial(number-1);
+        }
+        return 1;
+    }
+    let value=+prompt('nhập số nguyên n');
+    let result=findFactorial(value);
+    document.write(`${value}!= ${result}`);
+</script>
+</body>
+</html>
