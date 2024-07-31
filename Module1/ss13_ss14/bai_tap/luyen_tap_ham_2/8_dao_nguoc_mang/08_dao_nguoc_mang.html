@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẢO NGƯỢC MẢNG</title>
+</head>
+<body>
+<script>
+   function reverse (array){
+       let i=0;
+       let j =array.length-1
+       let temp;
+       while (i<j){
+           temp=array[i];
+           array[i]=array[j];
+           array[j]=temp;
+           i++;
+           j--;
+       }
+       return array;
+   }
+</script>
+</body>
+</html>
