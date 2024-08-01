@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHUỖI ĐỐI XỨNG</title>
+</head>
+<body>
+<script>
+    function checkString(myString){
+        let count=0;
+        for (let i=0;i<myString.length/2;i++){
+            if (myString[i]!==myString[myString.length-1-i]){
+                count++
+            }
+        }
+        if (count){
+            return false;
+        }else{
+            return true
+        }
+    }
+    let str=prompt('nhập chuỗi ký tự');
+    let result=checkString(str);
+    console.log(result)
+</script>
+</body>
+</html>
