@@ -5,21 +5,49 @@
     <title>ỨNG DỤNG QUẢN LÝ SẢN PHẨM</title>
 </head>
 <body>
-<h2>Add New Product</h2>
-<form>
+<div>
+    <h2>Add New Product</h2>
     <label>
-        <input type="text" id="nameProduct">
+        <input type="text" id="nameProduct" placeholder="New Product">
         <button onclick="addProduct()">Add</button>
     </label>
-</form>
-<h2>Display All Product</h2>
-<script>
-    let ProductArray=[]
-    function displayProduct(){
-        str="<table>";
-        let i;
+    <h2>Display All Product</h2>
+</div>
+<table>
+    <thead>
+    <th>Product Name</th>
+    <th><span id="total"></span>&nbsp;products</th>
+    </thead>
+    <tbody id="tableProduct">
 
+    </tbody>
+</table>
+<script>
+    let productArray=["Sony Xperia",'Samsung Galaxy']
+    function displayProduct(){
+        str="";
+        let i;
+        for(i=0;i<productArray.length;i++){
+            str=str+"<tr>";
+            str=str+`<td  width="400px" bgcolor="#fdf5e6" height="30px"  >${productArray[i]}</td>`;
+            str=str+`<td bgcolor="#7cfc00" width="50px" height="30px"><button onclick="editProduct(${i})">Edit</button></td>`;
+            str=str+`<td bgcolor="#7cfc00" width="50px" height="30px"><button onclick="deleteProduct(${i})">Delete</button></td>`;
+            str=str+'</tr>';
+        }
+        document.getElementById('total').innerText=productArray.length;
+        document.getElementById('tableProduct').innerHTML=str;
     }
+    displayProduct();
+    function addProduct(){
+        let product;
+        product =document.getElementById('nameProduct').value;
+        productArray.push(product);
+        displayProduct();
+    }
+function deleteProduct(i){
+    productArray.splice(i,1);
+    displayProduct();
+}
 </script>
 </body>
 </html>

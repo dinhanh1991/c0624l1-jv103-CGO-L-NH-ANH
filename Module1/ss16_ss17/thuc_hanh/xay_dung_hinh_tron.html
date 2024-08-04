@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XÂY DỰNG HÌNH TRÒN</title>
+</head>
+<body>
+<script>
+    class Circle{
+        constructor(radius , color) {
+            this.radius =radius;
+            this.color=color;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        getColor() {
+            return this.color;
+        }
+        getArea() {
+            return this.radius*this.radius*Math.PI;
+        }
+        setRadius(){
+            this.radius=parseFloat(radius);
+        }
+    }
+    let circle =new Circle(3,'red');
+    let rad=circle.getRadius();
+    let are =circle.getArea();
+    alert(`radius = ${rad} ; Area= ${are}`);
+</script>
+</body>
+</html>
