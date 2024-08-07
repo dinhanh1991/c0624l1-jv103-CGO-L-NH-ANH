@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CÔNG TẮC VÀ BÓNG ÈN</title>
+</head>
+<body>
+<script>
+    class ElectricLamp{
+        constructor(status) {
+            this.status=status;
+        }
+        setStatus(value){
+            this.status=value;
+        }
+        getStatus(){
+            return this.status;
+        }
+    }
+    class SwitchButton{
+        constructor(status,lamp) {
+            this.status=status;
+            this.lamp=lamp;
+        }
+        setLamp(lamp){
+            this.lamp=lamp;
+        }
+        getLamp(){
+            return this.lamp;
+        }
+        switchONLamp(){
+            return true
+        }
+        switchOffLamp(){
+            return false
+        }
+        connectToLamp(ElectricLamp){
+            if (ElectricLamp.getStatus()){
+                document.write(`Electric Lamp on <br>`);
+                ElectricLamp.setStatus(this.switchOffLamp());
+            }else {
+                document.write(`Electric Lamp off <br>`);
+                ElectricLamp.setStatus(this.switchONLamp());
+            }
+        }
+    }
+    let electricLamp=new ElectricLamp();
+    let button =new SwitchButton();
+    electricLamp.setStatus(true);
+    button.connectToLamp(electricLamp);
+    button.connectToLamp(electricLamp);
+    button.connectToLamp(electricLamp);
+</script>
+</body>
+</html>

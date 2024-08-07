@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ỨNG DỤNG ADAM EVA</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        setWeight(number) {
+            this.weight = parseFloat(number);
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(string) {
+            this.name = string;
+        }
+
+        setGender(string2) {
+            this.gender = string2;
+        }
+
+        setWeight(value) {
+           return  this.Weight = parseFloat(value);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.Weight;
+        }
+
+        say(text) {
+            document.write(text);
+        }
+
+        checkApple(apple) {
+            return apple.getWeight() > 0;
+        }
+
+        eat(apple) {
+            if (this.checkApple(apple)) {
+                this.Weight++;
+                apple.decrease()
+                this.say(`${this.getName()} eat Apple <br> the weight's Apple remain ${apple.getWeight()} units <br>
+                         the weight's ${this.getName()} increse: ${this.getWeight()} units <br>`);
+            }
+        }
+    }
+    let apple=new Apple();
+    let adam=new Human();
+    let eva=new Human();
+    eva.setName('Eva')
+    adam.setName('Adam');
+    eva.setWeight(45);
+    adam.setWeight(65);
+    apple.setWeight(10);
+    adam.eat(apple);
+    eva.eat(apple);
+</script>
+</body>
+</html>

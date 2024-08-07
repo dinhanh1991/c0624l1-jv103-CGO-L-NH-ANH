@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>PHÁT TRIỂN GAME LÁI XE</title>
+    <style>
+        canvas {
+            border: seagreen 3px;
+        }
+    </style>
+</head>
+<body onkeydown="gameBoard.movingCar(event)">
+<canvas height="500px" id="gameCanvas" width="500px"></canvas>
+<script>
+  let canvas=document.getElementById('gameCanvas');
+  let ctx=canvas.getContext('2d')
+  ctx.canvas.width=parseInt(800);
+  ctx.canvas.height=parseInt(500);
+  const carImage=new Image(20,20);
+  carImage.src='./image/car2.png';
+  class Board{
+      constructor(ctx) {
+          this.ctx=ctx;
+      }
+
+  }
+</script>
+</body>
+</html>
