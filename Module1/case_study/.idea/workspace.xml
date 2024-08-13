@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac1525af-3bb8-4139-bccb-446cecbb74d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/ex9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../add_excersie/exx6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tentris.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/bai_tap_di_chuyen_doi_tuong/di_chuyen_doi_tuong.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cat_catch_mouse/cat_catch_mouse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/remote_tv/remote_tv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cong_tac_va_bong_den/cong_tac_va_bong_den.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cong_tac_va_bong_den/cong_tac_va_bong_den.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/game_oto/game_oto.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/game_oto/game_oto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/images/down1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/nija.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/nija.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "dinhanh1991"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/dinhanh1991/c0624l1-jv103-CGO-L-NH-ANH.git",
+    "accountId": "8d310053-b10d-4e9e-b772-55ded7a5ce7a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2kb1nYly7wl3LRTexXoJVQGNLcm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Codegym/Module1",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac1525af-3bb8-4139-bccb-446cecbb74d7" name="Changes" comment="" />
+      <created>1723537629250</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723537629250</updated>
+      <workItem from="1723537630289" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

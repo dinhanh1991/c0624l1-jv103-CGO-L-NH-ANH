@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐẾM PHẦN TỬ CHẴN VÀ LẺ</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[];
+    let number=+prompt('nhập số phần tử mảng ');
+    for (let i=0;i<number;i++){
+        arrayNumber[i]= +prompt(` nhập số thứ ${i}`);
+    }
+    document.write(`mảng arrayNumber= [${arrayNumber}]`);
+   let i=0;
+   let count;
+   while (i<arrayNumber.length){
+       if(arrayNumber[i]%2===0){
+           count++
+       }
+       i++;
+   }
+   if (count===arrayNumber.length/2){
+       alert('OK');
+   }else {
+       alert('No');
+   }
+</script>
+
+</body>
+</html>

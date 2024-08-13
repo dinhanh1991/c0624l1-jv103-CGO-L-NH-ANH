@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+</head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: 360px 200px;
+        grid-template-rows: 600px;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    #outGame {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    #inGame {
+        border: 2px solid black;
+    }
+
+    #outGame button {
+        background: lightpink;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    #outGame button:hover {
+        background: aquamarine;
+    }
+
+    #outGame h1 {
+        font-size: 32px;
+        padding: 15px 30px;
+
+    }
+
+    #outGame p {
+        font-size: 20px;
+        font-family: ".VnTimeH";
+        padding: 15px 30px;
+        margin-bottom: auto;
+    }
+
+</style>
+<body>
+<div id="inGame">
+    <canvas id="board"></canvas>
+</div>
+<div id="outGame">
+    <h1>TETRIS</h1>
+    <p>Score:<span id="score">0</span></p>
+    <p>Level:<span id="level">1</span></p>
+    <button onclick="playgame()">PLAY</button>
+</div>
+<script>
+    let columns = 12;
+    let rows = 20;
+    let blockSize = 30;
+    let colorArr = ['blue', 'red', 'purple', 'yellow', 'green', 'cyan', 'gray', 'white'];
+    let canvas = document.getElementById('board');
+    let ctx = canvas.getContext('2d');
+    ctx.canvas.width = columns * blockSize;
+    ctx.canvas.height = rows * blockSize;
+
+    class Board {
+        constructor(ctx) {
+            this.ctx = ctx;
+            this.table = this.getArray();
+        }
+
+        getArray() {
+            let arrayColor = [];
+            for (let i = 0; i < rows; i++) {
+                arrayColor[i] = [];
+                for (let j = 0; j < columns; j++) {
+                    arrayColor[i][j] = '7';// mã màu trắng colorArr
+                }
+            }
+            return arrayColor;
+        }
+
+        drawCell(xAxis, yAxis, colorID) {
+            this.ctx.fillStyle = colorArr[colorID];
+            this.ctx.fillRect(xAxis * blockSize, yAxis * blockSize, blockSize, blockSize);
+            this.ctx.strokeRect(xAxis * blockSize, yAxis * blockSize, blockSize, blockSize);
+        }
+
+        drawBoard() {
+            for (let i = 0; i < this.table.length; i++) {
+                for (let j = 0; j < this.table[i].length; j++) {
+                    this.drawCell(j, i, this.table[i][j]);
+                }
+
+            }
+        }
+    }
+
+    let shapeBrickArray = [     /*hình dạng của khối gạch các  là id của mã màu là element*/
+        [[[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]]],
+        [[[1, 7], [1, 7], [1, 1]], [[1, 1, 1], [1, 7, 7]], [[1, 1], [7, 1], [7, 1]], [[7, 7, 1], [1, 1, 1]]],
+        [[[7, 2], [7, 2], [2, 2]], [[2, 7, 7], [2, 2, 2]], [[2, 2], [2, 7], [2, 7]], [[2, 2, 2], [7, 7, 2]]],
+        [[[3, 3, 3], [7, 3, 7], [7, 3, 7]], [[7, 7, 3], [3, 3, 3], [7, 7, 3]], [[7, 3, 7], [7, 3, 7], [3, 3, 3]], [[3, 7, 7], [3, 3, 3], [3, 7, 7]]],
+        [[[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]], [[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]]],
+        [[[5], [5], [5], [5]], [[5, 5, 5, 5]], [[5], [5], [5], [5]], [[5, 5, 5, 5]]],
+        [[[7, 6, 6], [6, 6, 7]], [[6, 7], [6, 6], [7, 6]], [[7, 6, 6], [6, 6, 7]], [[6, 7], [6, 6], [7, 6]]]
+    ];
+
+    class Brick {
+        constructor(idShape, shapePosition) {
+            this.idShape = idShape; //mã màu giá trị từ 0-6
+            this.shape = shapeBrickArray[this.idShape];
+            this.shapePosition = shapePosition; // giá trị nhận được [0-3]
+            this.columnPosition = 6; // vị trí xuất hiện đầu tiên của khối trục X
+            this.rowPosition = 0; // vị trí xuất hiện đầu tiên của khối trục Y
+        }
+
+        drawBrick() {
+            for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
+                for (let j = 0; j < this.shape[this.shapePosition][i].length; j++) {
+                    if (this.shape[this.shapePosition][i][j] !== 7) {
+                        board.drawCell(j + this.columnPosition, i + this.rowPosition, this.shape[this.shapePosition][i][j]);
+                    }
+                }
+            }
+        }
+
+        clearBrick() {
+            for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
+                for (let j = 0; j < this.shape[this.shapePosition][i].length; j++) {
+                    if (this.shape[this.shapePosition][i][j] !== 7) {
+                        board.drawCell(j + this.columnPosition, i + this.rowPosition, 7);
+                    }
+                }
+            }
+        }
+
+        moveLeft() {
+            if (!this.checkContact(this.columnPosition - 1, this.rowPosition, this.shape[this.shapePosition])) {
+                this.clearBrick();
+                this.columnPosition--;
+                this.drawBrick();
+            }
+        }
+
+        moveRight() {
+            if (!this.checkContact(this.columnPosition + 1, this.rowPosition, this.shape[this.shapePosition])) {
+                this.clearBrick();
+                this.columnPosition++;
+                this.drawBrick();
+            }
+        }
+
+        moveDown() {
+            if (!this.checkContact(this.columnPosition, this.rowPosition + 1, this.shape[this.shapePosition])) {
+                this.clearBrick();
+                this.rowPosition++;
+                this.drawBrick();
+            } else {
+                this.lockBrick();
+                brick.drawBrick();
+            }
+
+        }
+
+        turnBrick() {
+            if (!this.checkContact(this.columnPosition, this.rowPosition, this.shape[(this.shapePosition + 1) % 4])) {
+                this.clearBrick();
+                this.shapePosition = (this.shapePosition + 1) % 4;
+                this.drawBrick();
+            }
+        }
+
+        lockBrick() {
+            for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
+                for (let j = 0; j < this.shape[this.shapePosition][0].length; j++) {
+                    if (this.shape[this.shapePosition][i][j] !== 7) {
+                        board.table[this.rowPosition + i][this.columnPosition + j] = this.idShape;
+                    }
+                }
+            }
+            board.drawBoard();
+        }
+
+        checkContact(x, y, nextShape) {
+            for (let i = 0; i < nextShape.length; i++) {
+                for (let j = 0; j < nextShape[i].length; j++) {
+                    if (nextShape[i][j] !== 7) {
+                        if (j + x >= columns || x < 0 || y + i >= rows) {
+                            return true
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
+    function creativeBrick() {
+
+        return new Brick(Math.floor(Math.random() * 7) % 7, Math.floor(Math.random() * 4 % 4));
+    }
+
+    let board = new Board(ctx);
+    board.drawBoard();
+    let brick = creativeBrick()
+    document.addEventListener("keydown", function (event) {
+        switch (event.keyCode) {
+            case 37 :
+                brick.moveLeft();
+                break;
+            case 38:
+                brick.turnBrick();
+                break;
+            case 39:
+                brick.moveRight();
+                break;
+            case 40:
+                brick.moveDown();
+                break;
+
+        }
+    })
+</script>
+</body>
+</html>

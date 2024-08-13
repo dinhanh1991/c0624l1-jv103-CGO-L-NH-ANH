@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 6</title>
+</head>
+<body>
+<script>
+    function checkString(string){
+        let intArray=[];
+        for(let i=0;i<string.length;i++){
+            if (1*string[i]<0){
+                intArray.push(string[i]);
+            }
+        }
+        return intArray;
+    }
+    let myString=prompt('nhập chuỗi ký tự');
+    console.log(` dãy số nguyên âm từ chuỗi đã cho là [${checkString(myString)}]`)
+</script>
+</body>
+</html>

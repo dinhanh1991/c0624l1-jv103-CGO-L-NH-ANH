@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 8</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[];
+    let number=+prompt('nhập số phần tử mảng ');
+    for (let i=0;i<number;i++){
+        arrayNumber[i]= +prompt(` nhập số thứ ${i}`);
+    }
+    document.write(`mảng vừa khởi tạo là : [${arrayNumber}]<br>`);
+    let count=0;
+function findMax(array){
+    let i;
+    let max=array[0];
+    for (i=1;i<array.length;i++){
+        if(max<array[i]){
+            max=array[i];
+        }
+    }
+    return max ;
+}
+for (let i=0;i<arrayNumber.length;i++){
+    if(arrayNumber[i]===findMax(arrayNumber)){
+        count++
+    }
+}
+document.write(`Số lớn nhất trong dãy số là ${findMax(arrayNumber)} có ${count} lần xuất hiện `)
+</script>
+</body>
+</html>

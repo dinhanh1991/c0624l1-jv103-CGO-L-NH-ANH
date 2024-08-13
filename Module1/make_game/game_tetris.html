@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME TETRIS</title>
+</head>
+<style>
+    body {
+        display: grid;
+        grid-template-columns: 360px 200px;
+        grid-template-rows: 600px;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    #outGame {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    #inGame {
+        border: 2px solid black;
+    }
+
+    #outGame button {
+        background: lightpink;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    #outGame button:hover {
+        background: aquamarine;
+    }
+
+    #outGame h1 {
+        font-size: 32px;
+        padding: 15px 30px;
+
+    }
+
+    #outGame p {
+        font-size: 20px;
+        font-family: ".VnTimeH";
+        padding: 15px 30px;
+        margin-bottom: auto;
+    }
+
+</style>
+<body>
+<div id="inGame">
+    <canvas id="board"></canvas>
+</div>
+<div id="outGame">
+    <h1>TETRIS</h1>
+    <p>Score:<span id="score">0</span></p>
+    <p>Level:<span id="level">1</span></p>
+    <button onclick="playgame()">PLAY</button>
+</div>
+<script src="game.js">
+
+</script>
+</body>
+</html>

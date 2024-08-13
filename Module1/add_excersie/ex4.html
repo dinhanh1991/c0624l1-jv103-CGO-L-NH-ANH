@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI TẬP LÀM THÊM 4</title>
+</head>
+<body>
+<script>
+    let string = prompt('nhập chuỗi kí tự');
+    let upString = 'ABCDEFGHIJKLMNOPQRSTUVWXYĂÂƯÔƠÊ'
+    let lowString = 'adfghjklzxcvbnmqwerstyuiopôơâưăê'
+    console.log(lowString.length)
+    let count1 = 0;
+    let count2 = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (upString.indexOf(string[i]) !== -1) {
+            count1++;
+        }else if(lowString.indexOf(string[i])!==-1)
+            count2++
+    }
+    if (count1===count2){
+        alert('OK');
+    }else {
+        alert('NO');
+    }
+</script>
+</body>
+</html>

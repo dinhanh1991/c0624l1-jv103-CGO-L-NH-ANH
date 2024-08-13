@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAT CATCH MOUSE</title>
+</head>
+<body>
+<script>
+    class  Animal{
+        constructor(name,weight,speed) {
+            this.name=name;
+            this.weight=weight;
+            this.speed=speed;
+        }
+        say(){
+
+        }
+    }
+    class Mouse extends Animal{
+        constructor(name,weight,speed,status) {
+            super(name,weight,speed);
+            this.status=status;
+        }
+        say(messenger){
+            console.log(messenger)
+        }
+    }
+    class Cat extends Animal{
+        constructor(name,weight,speed) {
+            super(name,weight,speed);
+        }
+        say(messenger) {
+            console.log(messenger);
+        }
+        catchMouse(mouse){
+            if(this.speed>mouse.speed){
+                this.say('son,you cannot escape');
+                this.eatMouse(mouse);
+            }else {
+                mouse.say(mouse.name+" say:catch me if you can")
+            }
+        }
+       eatMouse(mouse){
+            if (mouse.status){
+                console.log(`${this.name} say eatten weight is ${this.weight+mouse.weight}`)
+            }else {
+                console.log(`${this.name} say the mouse died cannot eat`)
+            }
+       }
+    }
+    let rat =new Mouse('jerry',1,5,true);
+    let cat =new Cat('Tom',5,8);
+    let mouse =new Mouse('Mickey',1,8,true)
+    cat.catchMouse(rat);
+    cat.catchMouse(mouse);
+</script>
+</body>
+</html>

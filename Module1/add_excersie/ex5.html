@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5</title>
+</head>
+<body>
+<script>
+    let number= +prompt('nhập số lượng dãy số :');
+    while (number%2!==0){
+        number= +prompt('nhập lại số lượng dãy số phải là số chẵn');
+    }
+    let i;
+    let arrayNumber=[];
+    for (i=0;i<number;i++){
+        arrayNumber[i]= +prompt(`nhap số thứ ${i}`);
+    }
+    let count=0;
+    document.write(`Dãy số vừa nập là [${arrayNumber}]`);
+    for (i=0;i<arrayNumber.length;i=i+2){
+        if (arrayNumber[i]>arrayNumber[i+1]){
+            count++
+            break;
+        }
+    }
+    if (count){
+        alert('NO');
+    }else{
+        alert('OK');
+    }
+</script>
+</body>
+</html>

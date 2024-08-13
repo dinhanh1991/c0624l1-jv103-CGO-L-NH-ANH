@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GIÁ TRỊ TRUNG BÌNH</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[];
+    let number=+prompt('nhập số phần tử mảng ');
+    for (let i=0;i<number;i++){
+        arrayNumber[i]= +prompt(` nhập số thứ ${i}`);
+    }
+    document.write(`mảng vừa khởi tạo là : [${arrayNumber}]<br>`);
+    function calculateAvg(array){
+       let i;
+       let sum =0;
+       let avg;
+       for(i=0;i<array.length;i++){
+           sum=sum+array[i];
+       }
+       avg=sum/array.length;
+       return avg;
+    }
+    let count =0;
+    for (let i=0;i<arrayNumber.length;i++){
+        if(arrayNumber[i]===calculateAvg(arrayNumber)){
+            count++
+        }
+    }
+    document.write(`Số lớn nhất trong dãy số là ${calculateAvg(arrayNumber)} có ${count} lần xuất hiện `);
+</script>
+</body>
+</html>

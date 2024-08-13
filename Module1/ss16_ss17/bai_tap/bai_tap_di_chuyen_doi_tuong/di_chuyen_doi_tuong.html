@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DI CHUYỂN ĐỐI TƯỢNG</title>
+</head>
+<body>
+
+<div id="moveZoro"></div>
+<script>
+    class Hero {
+        constructor(top, left, right, up, down, image, size) {
+            this.top = top;
+            this.left = left;
+            this.right = right;
+            this.image = image;
+            this.size = size;
+        }
+
+        setSize(value) {
+            this.size = value;
+        }
+
+        getSize() {
+            return this.size
+        }
+
+        setImage(image) {
+            this.image = image;
+        }
+
+        getImage() {
+            return this.image
+        }
+
+        setTop(top) {
+            this.top = top;
+        }
+
+        getTop() {
+            return this.top
+        }
+
+        setLeft(left) {
+            this.left = left;
+        }
+
+        getLeft() {
+            return this.left
+        }
+
+        getHeroElement() {
+            return `<img width="${this.getSize()}px" height="${this.getSize()}px" src="${this.getImage()}"
+                         style="left: ${this.getLeft()}px; top: ${this.getTop()}px; position: absolute "/>`
+        }
+
+        moveRight() {
+            this.left += 20;
+            this.setLeft(this.left);
+            this.getLeft();
+        }
+
+        moveDown() {
+            this.top += 20;
+            this.setTop(this.top);
+            this.getTop();
+        }
+
+        moveLeft() {
+            this.left -= 20;
+            this.setLeft(this.left);
+            this.getLeft();
+        }
+
+        moveTop() {
+            this.top -= 20;
+            this.setTop(this.top);
+            this.getTop();
+        }
+    }
+
+    let hero = new Hero();
+    hero.setSize(80);
+    hero.setTop(100);
+    hero.setLeft(200);
+    hero.setImage('./hero/zoro.png');
+
+    function start1() {
+        if (hero.getLeft() < window.innerWidth - hero.getSize()) {
+            hero.moveRight();
+        } else if (hero.getTop() < window.innerHeight - hero.getSize()) {
+            hero.moveDown();
+        }
+        document.getElementById('moveZoro').innerHTML = hero.getHeroElement()
+        console.table(document.getElementById('moveZoro').innerHTML)
+        setTimeout(start1, 20);
+    }
+    start1();
+</script>
+</body>
+</html>

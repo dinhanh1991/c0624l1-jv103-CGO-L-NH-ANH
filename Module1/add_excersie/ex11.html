@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BÀI TẬP SỐ 11</title>
+</head>
+<body>
+<script>
+    function checkString(string){
+        document.write('chuỗi kí tự ban đầu là '+string+"<br>");
+        let alphabetAndNumberString='abcdefghijklmnopqrstuvxwyzăâêôơưABCDEFGHIJKLMNOPQRSTUVXWYZĂÂÊÔƠƯ0123456789';
+        let array=[];
+        for (let i=0;i<string.length;i++){
+            if (alphabetAndNumberString.indexOf(string[i])===-1){
+                array.push(string[i]);
+            }
+        }
+        return array;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REMOTE TV</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(code, control, volume) {
+            this.code = code;
+        }
+
+        setCode(code) {
+            this.code = code;
+        }
+
+        getCode() {
+            return this.code
+        }
+
+        setVolume(volume) {
+            return volume;
+        }
+
+        setChanel(value) {
+            return value;
+        }
+    }
+
+    class Television {
+        constructor(channel, volumeTV, status) {
+            this.channel = channel;
+            this.volumeTV = volumeTV;
+            this.status = status;
+        }
+
+        setChanel(chanel) {
+            this.channel = chanel;
+        }
+
+        getChanel() {
+            return this.channel
+        }
+
+        setVolume(volume) {
+            this.volumeTV = volume;
+        }
+
+        getVolume() {
+            return this.volumeTV;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            console.log(this.status)
+            return this.status;
+        }
+        turnOn(){
+            if(!this.getStatus()){
+                console.log(`Turn on TV!`);
+                return this.setStatus(true)
+            }else {
+                console.log(`TV is active `);
+            }
+        }
+        turnOff(){
+            if (this.getStatus()){
+                console.log(`TV is active `);
+                return this.setStatus(false)
+            }
+        }
+        changeChannel(remote, value) {
+            remote.setChanel(value)
+            this.setChanel(remote.setChanel(value))
+            return this.getChanel()
+        }
+
+        changeVolume(remote, value) {
+            remote.setVolume(value);
+            this.setChanel(remote.setVolume(value));
+            return this.getChanel();
+        }
+    }
+    let sony=new Television();
+    let remote =new Remote();
+    sony.turnOn();
+    sony.getStatus()
+    sony.setChanel(7);
+    console.log(sony.getChanel())
+    console.log(sony.changeChannel(remote,3));
+    console.log(sony.changeVolume(remote,3));
+</script>
+</body>
+</html>

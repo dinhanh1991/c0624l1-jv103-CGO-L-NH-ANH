@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 6</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[];
+    let number=+prompt('nhập số phần tử mảng ');
+    for (let i=0;i<number;i++){
+        arrayNumber[i]= +prompt(` nhập số thứ ${i}`);
+    }
+    document.write(`mảng vừa khởi tạo là : [${arrayNumber}]<br>`);
+    let string='dãy số có số hàng đơn vị lớn hơn hàng chục là: '
+    for (let i=0;i<arrayNumber.length;i++){
+        if(arrayNumber[i]%10>arrayNumber[i]/10){
+         string= string+arrayNumber[i]+', ';
+        }
+    }
+    document.write(string);
+</script>
+</body>
+</html>

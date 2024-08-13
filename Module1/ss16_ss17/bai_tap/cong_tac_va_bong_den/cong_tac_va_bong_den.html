@@ -6,50 +6,61 @@
 </head>
 <body>
 <script>
-    class ElectricLamp{
+    class ElectricLamp {
         constructor(status) {
-            this.status=status;
+            this.status = status;
         }
-        setStatus(value){
-            this.status=value;
+
+        setStatus(value) {
+            this.status = value;
         }
-        getStatus(){
+
+        getStatus() {
             return this.status;
         }
     }
-    class SwitchButton{
-        constructor(status,lamp) {
-            this.status=status;
-            this.lamp=lamp;
+
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp = lamp;
         }
-        setLamp(lamp){
-            this.lamp=lamp;
+
+        setLamp(lamp) {
+            this.lamp = lamp;
         }
-        getLamp(){
+
+        getLamp() {
             return this.lamp;
         }
-        switchONLamp(){
+
+        switchONLamp() {
             return true
         }
-        switchOffLamp(){
+
+        switchOffLamp() {
             return false
         }
-        connectToLamp(ElectricLamp){
-            if (ElectricLamp.getStatus()){
+
+        connectToLamp(ElectricLamp) {
+            if (ElectricLamp.getStatus()) {
                 document.write(`Electric Lamp on <br>`);
                 ElectricLamp.setStatus(this.switchOffLamp());
-            }else {
+            } else {
                 document.write(`Electric Lamp off <br>`);
                 ElectricLamp.setStatus(this.switchONLamp());
             }
         }
     }
-    let electricLamp=new ElectricLamp();
-    let button =new SwitchButton();
+
+    let electricLamp = new ElectricLamp();
+    let button = new SwitchButton();
     electricLamp.setStatus(true);
-    button.connectToLamp(electricLamp);
-    button.connectToLamp(electricLamp);
-    button.connectToLamp(electricLamp);
+    for (let i = 0; i < 10; i++) {
+        button.connectToLamp(electricLamp);
+        button.connectToLamp(electricLamp);
+    }
+
 </script>
 </body>
 </html>

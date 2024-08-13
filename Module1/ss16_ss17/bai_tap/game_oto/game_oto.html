@@ -13,17 +13,58 @@
 <body onkeydown="gameBoard.movingCar(event)">
 <canvas height="500px" id="gameCanvas" width="500px"></canvas>
 <script>
-  let canvas=document.getElementById('gameCanvas');
-  let ctx=canvas.getContext('2d')
-  ctx.canvas.width=parseInt(800);
-  ctx.canvas.height=parseInt(500);
-  const carImage=new Image(20,20);
-  carImage.src='./image/car2.png';
-  class Board{
-      constructor(ctx) {
-          this.ctx=ctx;
+  // let canvas=document.getElementById('gameCanvas');
+  // let ctx=canvas.getContext('2d')
+  // ctx.canvas.width=parseInt(800);
+  // ctx.canvas.height=parseInt(500);
+  // const carImage=new Image(20,20);
+  // carImage.src='./image/car2.png';
+  let rightDirector='right';
+  let leftDirector='left';
+  let uptDirector='up';
+  let downDirector='down';
+  class Car{
+      constructor(xPosition,yPosition,director,image,speed) {
+          this.xPosition=xPosition;
+          this.yPosition=yPosition;
+         this.director=director;
+         this.image=image;
+         this.speed=speed
       }
+      setPosition(xNumber,Ynumber){
+          this.xPosition=xNumberumber;
+          this.yPosition=yNumber;
+      }
+      getXPosition(){
+          return this.xPosition;
+      }
+      getYPosition(){
+          return this.yPosition;
+      }
+      setDirector(value){
+          this.director=value;
+      }
+      getDirection(){
+          return this.director;
+      }
+      setSpeed(speed){
+          this.speed=speed;
+      }
+      getSpeed(){
+          return this.speed;
+      }
+      setImage(image){
+          this.image=image;
+      }
+      getImage(image){
+          return this.image;
+      }
+      moveCar(){
+          switch (this.director){
+              case rightDirector:
 
+          }
+      }
   }
 </script>
 </body>
