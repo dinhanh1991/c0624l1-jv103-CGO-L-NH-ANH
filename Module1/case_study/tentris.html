@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Tetris</title>
 </head>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
 <style>
     body {
         display: grid;
@@ -11,13 +13,27 @@
         grid-template-rows: 600px;
         justify-content: center;
         margin-top: 100px;
+        background-image: url("images.jpg ");
+        background-size: 900px;
     }
 
     #outGame {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 80px 80px 80px 360px;
         justify-content: space-between;
+        margin-left: 20px;
 
+    }
+
+    #outGame p label input {
+        width: 150px;
+        height: 50px;
+        background-color: bisque;
+        border: 2px black;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
     }
 
     #inGame {
@@ -25,26 +41,35 @@
     }
 
     #outGame button {
-        background: lightpink;
+        background: lightseagreen;
+        border-radius: 6px;
         font-size: 16px;
         padding: 15px 20px;
+        width: 150px;
+        height: 50px;
+        margin-bottom: 25px;
+        margin-top: 260px;
+        margin-left: 30px;
     }
 
     #outGame button:hover {
         background: aquamarine;
+
     }
 
     #outGame h1 {
-        font-size: 32px;
         padding: 15px 30px;
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: 2.5rem
 
     }
 
     #outGame p {
         font-size: 20px;
-        font-family: ".VnTimeH";
-        padding: 15px 30px;
+        padding: 20px 30px;
         margin-bottom: auto;
+        margin-left: 1px;
     }
 
 </style>
@@ -54,9 +79,17 @@
 </div>
 <div id="outGame">
     <h1>TETRIS</h1>
-    <p>Score:<span id="score">0</span></p>
-    <p>Level:<span id="level">1</span></p>
-    <button onclick="playgame()">PLAY</button>
+    <p>SCORE:
+        <label>
+            <input id="score" placeholder="Score" readonly="readonly" type="number">
+        </label>
+    </p>
+    <p>LEVEL:
+        <label>
+            <input id="level" placeholder="Level" readonly="readonly" type="number">
+        </label>
+    </p>
+    <button onclick="playGame()">PLAY</button>
 </div>
 <script>
     let columns = 12;
@@ -67,6 +100,9 @@
     let ctx = canvas.getContext('2d');
     ctx.canvas.width = columns * blockSize;
     ctx.canvas.height = rows * blockSize;
+    let score = 0;
+    let gameOver = false;
+    let level = 0;
 
     class Board {
         constructor(ctx) {
@@ -79,7 +115,7 @@
             for (let i = 0; i < rows; i++) {
                 arrayColor[i] = [];
                 for (let j = 0; j < columns; j++) {
-                    arrayColor[i][j] = '7';// mã màu trắng colorArr
+                    arrayColor[i][j] = 7;// mã màu trắng colorArr
                 }
             }
             return arrayColor;
@@ -91,7 +127,7 @@
             this.ctx.strokeRect(xAxis * blockSize, yAxis * blockSize, blockSize, blockSize);
         }
 
-        drawBoard() {
+        drawBoard(imgArray) {
             for (let i = 0; i < this.table.length; i++) {
                 for (let j = 0; j < this.table[i].length; j++) {
                     this.drawCell(j, i, this.table[i][j]);
@@ -101,11 +137,11 @@
         }
     }
 
-    let shapeBrickArray = [     /*hình dạng của khối gạch các  là id của mã màu là element*/
+    let shapeBrickArray = [     /*hình dạng của khối gạch các  là id của mã màu là element trong đó những phần tử có giá trị là 7 sẽ không được vẽ */
         [[[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]]],
         [[[1, 7], [1, 7], [1, 1]], [[1, 1, 1], [1, 7, 7]], [[1, 1], [7, 1], [7, 1]], [[7, 7, 1], [1, 1, 1]]],
         [[[7, 2], [7, 2], [2, 2]], [[2, 7, 7], [2, 2, 2]], [[2, 2], [2, 7], [2, 7]], [[2, 2, 2], [7, 7, 2]]],
-        [[[3, 3, 3], [7, 3, 7], [7, 3, 7]], [[7, 7, 3], [3, 3, 3], [7, 7, 3]], [[7, 3, 7], [7, 3, 7], [3, 3, 3]], [[3, 7, 7], [3, 3, 3], [3, 7, 7]]],
+        [[[3, 3, 3], [7, 3, 7]], [[7, 3], [3, 3], [7, 3]], [[7, 3, 7], [3, 3, 3]], [[3, 7], [3, 3], [3, 7]]],
         [[[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]], [[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]]],
         [[[5], [5], [5], [5]], [[5, 5, 5, 5]], [[5], [5], [5], [5]], [[5, 5, 5, 5]]],
         [[[7, 6, 6], [6, 6, 7]], [[6, 7], [6, 6], [7, 6]], [[7, 6, 6], [6, 6, 7]], [[6, 7], [6, 6], [7, 6]]]
@@ -117,9 +153,8 @@
             this.shape = shapeBrickArray[this.idShape];
             this.shapePosition = shapePosition; // giá trị nhận được [0-3]
             this.columnPosition = 6; // vị trí xuất hiện đầu tiên của khối trục X
-            this.rowPosition = 0; // vị trí xuất hiện đầu tiên của khối trục Y
+            this.rowPosition = -2;// vị trí xuất hiện đầu tiên của khối trục Y
         }
-
         drawBrick() {
             for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
                 for (let j = 0; j < this.shape[this.shapePosition][i].length; j++) {
@@ -162,8 +197,7 @@
                 this.rowPosition++;
                 this.drawBrick();
             } else {
-                this.lockBrick();
-                brick.drawBrick();
+                return true;
             }
 
         }
@@ -177,6 +211,17 @@
         }
 
         lockBrick() {
+            if (this.rowPosition < 0) {
+                board.table = board.getArray();
+                board.drawBoard();
+                let img = new Image();
+                img.src = 'image/game over.png';
+                img.onload = function () {
+                    ctx.drawImage(img, 80, 200, 200, 200);
+                }
+                gameOver = true;
+                return;
+            }
             for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
                 for (let j = 0; j < this.shape[this.shapePosition][0].length; j++) {
                     if (this.shape[this.shapePosition][i][j] !== 7) {
@@ -187,12 +232,46 @@
             board.drawBoard();
         }
 
+        checkFullAndGetScore() {
+            let count = 0;
+            for (let k = 0; k < 5; k++) {
+                for (let i = this.rowPosition + this.shape[this.shapePosition].length - 1; i >= this.rowPosition; i--) {
+                    if (board.table[i].indexOf(7) < 0) {
+                        count++
+                        for (let j = i; j > 0; j--) {
+                            for (let m = 0; m < columns; m++) {
+                                board.table[j][m] = board.table[j - 1][m];
+                            }
+                        }
+                    }
+                }
+            }
+            switch (count) {
+                case 0 || 1:
+                    score = score + (count + 0.5 * level) * 100;
+                    break;
+                case 2:
+                    score = score + (count + 0.5 * level) * 100 * 1.4;
+                    break;
+                case 3:
+                    score = score + (count + 0.5 * level) * 100 * 1.8;
+                    break;
+                case 4:
+                    score = score + (count + 0.5 * level) * 100 * 2;
+                    break;
+            }
+            level = Math.floor(score / 1000);
+            document.getElementById('score').value = score;
+            document.getElementById('level').value = level;
+            board.drawBoard();
+        }
+
         checkContact(x, y, nextShape) {
             for (let i = 0; i < nextShape.length; i++) {
                 for (let j = 0; j < nextShape[i].length; j++) {
-                    if (nextShape[i][j] !== 7) {
-                        if (j + x >= columns || x < 0 || y + i >= rows) {
-                            return true
+                    if (nextShape[i][j] !== 7 && y >= 0) {
+                        if (j + x >= columns || x < 0 || y + i >= rows || board.table[y + i][j + x] !== 7) {
+                            return true;
                         }
                     }
                 }
@@ -205,27 +284,52 @@
 
         return new Brick(Math.floor(Math.random() * 7) % 7, Math.floor(Math.random() * 4 % 4));
     }
-
+    function playGame() {
+        score = 0;
+        board.drawBoard();
+        document.getElementById('score').value = score;
+        level = 0;
+        document.getElementById('level').value = level;
+        let reGame = setInterval(function () {
+            if (!gameOver) {
+                brick.moveDown();
+                if (brick.moveDown()) {
+                    brick.lockBrick();
+                    brick.checkFullAndGetScore();
+                    brick = creativeBrick();
+                    brick.drawBrick();
+                }
+            } else {
+                clearInterval(reGame);
+                gameOver = false;
+            }
+        },1000);
+    }
     let board = new Board(ctx);
     board.drawBoard();
     let brick = creativeBrick()
     document.addEventListener("keydown", function (event) {
-        switch (event.keyCode) {
-            case 37 :
-                brick.moveLeft();
-                break;
-            case 38:
-                brick.turnBrick();
-                break;
-            case 39:
-                brick.moveRight();
-                break;
-            case 40:
-                brick.moveDown();
-                break;
+        if (!gameOver) {
+            switch (event.keyCode) {
+                case 37 :
+                    brick.moveLeft();
+                    break;
+                case 38:
+                    brick.turnBrick();
+                    break;
+                case 39:
+                    brick.moveRight();
+                    break;
+                case 40:
+                    brick.moveDown();
+                    break;
 
+            }
         }
     })
 </script>
+<script crossorigin="anonymous"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 </body>
 </html>

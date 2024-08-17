@@ -17,7 +17,7 @@ ctx.canvas.height = rows * sizeSquare;
 class Board {
     constructor(ctx) {
         this.ctx = ctx;
-        this.board = boardArray;
+        this.table = boardArray;
     }
 
     drawCell(x, y, color) {
@@ -27,17 +27,17 @@ class Board {
     }
 
     drawBoard() {
-        for (let i = 0; i < this.board.length; i++) {
-            for (let j = 0; j < this.board[i].length; j++) {
-                this.drawCell(j, i, colorArray[this.board[i][j]])
+        for (let i = 0; i < this.table.length; i++) {
+            for (let j = 0; j < this.table[i].length; j++) {
+                this.drawCell(j, i, colorArray[this.table[i][j]])
             }
         }
     }
 }
 
 let shapeBrickArray = [     /*hình dạng của khối gạch các  là id của mã màu là element*/
-    [[[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]], [[0, 0], [0, 0]]],
-    [[[1, 7], [1, 7], [1, 1]], [[1, 1, 1], [1, 7, 7]], [[1, 1], [7, 1], [7, 1]], [[7, 7, 1], [1, 1, 1]]],
+    [[[1, 0], [0, 0]],[[0, 0], [0, 0]],[[0, 0], [0, 0]],[[0, 0], [0, 0]]],//vuông
+    [[[1, 7], [1, 7], [1, 1]],[[1, 1, 1], [1, 7, 7]],[[1, 1], [7, 1], [7, 1]],[[7, 7, 1], [1, 1, 1]]],//L
     [[[7, 2], [7, 2], [2, 2]], [[2, 7, 7], [2, 2, 2]], [[2, 2], [2, 7], [2, 7]], [[2, 2, 2], [7, 7, 2]]],
     [[[3, 3, 3], [7, 3, 7], [7, 3, 7]], [[7, 7, 3], [3, 3, 3], [7, 7, 3]], [[7, 3, 7], [7, 3, 7], [3, 3, 3]], [[3, 7, 7], [3, 3, 3], [3, 7, 7]]],
     [[[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]], [[4, 4, 7], [7, 4, 4]], [[7, 4], [4, 4], [4, 7]]],
@@ -58,7 +58,7 @@ class Brick {
         for (let i = 0; i < this.shape[this.idDirector].length; i++) {
             for (let j = 0; j < this.shape[this.idDirector][i].length; j++) {
                 if (this.shape[this.idDirector][i][j] !== 7) {
-                    board.drawCell(j + this.xPosition, i + this.yPosition, colorArray[this.idShape]);
+                    board.drawCell(j + this.xPosition, i + this.yPosition,colorArray[this.shape[this.idDirector][i][j]]);
                 }
             }
         }
@@ -75,27 +75,35 @@ class Brick {
     }
 
     moveLeft() {
+        if(!this.checkContact(this.xPosition-1, this.yPosition,this.shape[this.idDirector])) {
             this.unDrawBrick();
             this.xPosition--;
             this.drawBrick();
+        }
     }
 
     moveRight() {
+        if(!this.checkContact(this.xPosition+1, this.yPosition,this.shape[this.idDirector])) {
             this.unDrawBrick();
             this.xPosition++;
             this.drawBrick();
+        }
     }
-
     moveDown() {
+        if(!this.checkContact(this.xPosition, this.yPosition+1,this.shape[this.idDirector])){
             this.unDrawBrick();
             this.yPosition++;
             this.drawBrick();
+         }else {
+          return true;
+        }
     }
-
     turnBrick() {
+        if (!this.checkContact(this.xPosition, this.yPosition,this.shape[(this.idDirector+1)%4])) {
             this.unDrawBrick();
             this.idDirector = (this.idDirector + 1) % 4;
             this.drawBrick();
+        }
     }
 
     checkContact(x, y, nextShape) {
@@ -110,12 +118,24 @@ class Brick {
         }
         return false;
     }
+    lockBrick() {
+        for (let i = 0; i < this.shape[this.shapePosition].length; i++) {
+            for (let j = 0; j < this.shape[this.shapePosition][0].length; j++) {
+                if (this.shape[this.shapePosition][i][j] !== 7) {
+                    board.table[this.yPosition + i][this.xPosition + j] = this.idShape;
+                }
+            }
+        }
+         return board.table
+    }
 }
+function lockBrick(){
 
-let board = new Board(ctx);
-board.drawBoard()
-let brick = new Brick(1, 1);
-brick.drawBrick();
+}
+function makeBrick(){
+    return new Brick(Math.floor(Math.random()*7%7),Math.floor(Math.random()*4%4));
+}
+let brick=makeBrick()
 document.addEventListener("keydown", function (event) {
     switch (event.keyCode) {
         case 37 :
@@ -129,10 +149,15 @@ document.addEventListener("keydown", function (event) {
             break;
         case 40:
             brick.moveDown();
+            if(brick.moveDown()){
+                brick=makeBrick();
+                console.log(brick.lockBrick())
+            }
             break;
-
     }
 })
+let board = new Board(ctx);
+board.drawBoard()
 
 
 

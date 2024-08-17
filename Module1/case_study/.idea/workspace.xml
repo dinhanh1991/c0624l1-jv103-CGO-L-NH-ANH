@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac1525af-3bb8-4139-bccb-446cecbb74d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/ex9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../add_excersie/exx6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tentris.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/bai_tap_di_chuyen_doi_tuong/di_chuyen_doi_tuong.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cat_catch_mouse/cat_catch_mouse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/remote_tv/remote_tv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cong_tac_va_bong_den/cong_tac_va_bong_den.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/cong_tac_va_bong_den/cong_tac_va_bong_den.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/game_oto/game_oto.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss16_ss17/bai_tap/game_oto/game_oto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/images/down1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/nija.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss16_ss17/bai_tap/nija/nija.js" beforeDir="false" />
-    </list>
+    <list default="true" id="ac1525af-3bb8-4139-bccb-446cecbb74d7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,35 +10,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "dinhanh1991"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dinhanh1991&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dinhanh1991/c0624l1-jv103-CGO-L-NH-ANH.git",
-    "accountId": "8d310053-b10d-4e9e-b772-55ded7a5ce7a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dinhanh1991/c0624l1-jv103-CGO-L-NH-ANH.git&quot;,
+    &quot;accountId&quot;: &quot;8d310053-b10d-4e9e-b772-55ded7a5ce7a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2kb1nYly7wl3LRTexXoJVQGNLcm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Codegym/Module1",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Codegym/Module1&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -78,6 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723537629250</updated>
       <workItem from="1723537630289" duration="25000" />
+      <workItem from="1723554912301" duration="110000" />
     </task>
     <servers />
   </component>
