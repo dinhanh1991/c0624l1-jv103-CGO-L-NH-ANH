@@ -11,7 +11,7 @@
             return result + ' diem nho hon 48 diem nen khong duoc lam tron va truot ';
         } else {
             if ((result % 5) < 3) {
-                return `ket qua giu nguyen vi ${result} chia cho 5 du ${result % 5} khong nho hon 3 ket qua la ${result} `;
+                return `ket qua giu nguyen vi khoang cach  ${result} den ${Math.floor(result / 5)*5+5} khong nho hon 3  ket qua la: ${result} `;
             } else {
                 let i = Math.floor(result / 5);
                 return `ket qua sau khi lam tron la ${(i + 1) * 5}`;
