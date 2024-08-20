@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết tắt</title>
+</head>
+<body>
+<script>
+    function writeString(string){
+        alert('chuỗi nhập vào là '+string)
+        let count =0;
+        string.trim();
+        let newString=string[0];
+        for (let i=0; i<string.length;i++ ){
+            if(string[i]===' '&&string[i+1]!==' '){
+                count++;
+                newString=newString+string[i+1];
+            }
+        }
+        if (count===0){
+            return'chuoi chi có mot tu nen khong can thiêt phai viet tat';
+        }else {
+            return 'chuoi ky tu viet tat la '+newString.toUpperCase();
+        }
+    }
+    let myString =prompt('nhập chuoi ky tu');
+    let b=writeString(myString);
+    alert(b)
+</script>
+</body>
+</html>

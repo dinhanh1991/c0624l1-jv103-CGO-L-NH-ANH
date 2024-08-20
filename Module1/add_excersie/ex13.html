@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNumber =[];
+    console.log(arrayNumber.length);
+    let number=+prompt('nhập số phần tử mảng n= ');
+    for (let i=0;i<number;i++){
+        arrayNumber[i]= +prompt(` nhập số thứ ${i}`);
+    }
+    document.write(`mảng arrayNumber= [${arrayNumber}]`);
+    function isPrimerNumber(number){
+        let count=0;
+        if (number<2){
+            return false;
+        }else if (number<4){
+            return true;
+        }else {
+            for(let i=2;i<Math.sqrt(number)+0.1;i++){
+                if(number%i===0){
+                   count++;
+                   break;
+                }
+            }
+            if (count){
+                return false;
+            }else {
+                return true;
+            }
+        }
+    }
+    let count =0;
+    for (let i=0;i<arrayNumber.length;i++){
+        if (!isPrimerNumber(arrayNumber[i])){
+            count++;
+        }
+    }
+    if (count){
+        alert('No');
+    }else {
+        alert('OK');
+    }
+</script>
+</body>
+</html>

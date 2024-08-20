@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam 2</title>
+</head>
+<body>
+<script>
+    function checkResult(result) {
+        if (result < 48) {
+            return result + ' diem nho hon 48 diem nen khong duoc lam tron va truot ';
+        } else {
+            if ((result % 5) < 3) {
+                return `ket qua giu nguyen vi ${result} chia cho 5 du ${result % 5} khong nho hon 3 ket qua la ${result} `;
+            } else {
+                let i = Math.floor(result / 5);
+                return `ket qua sau khi lam tron la ${(i + 1) * 5}`;
+            }
+        }
+
+    }
+
+    let number = +prompt('nhập số điểm');
+    let a = checkResult(number);
+    alert(a);
+</script>
+</body>
+</html>

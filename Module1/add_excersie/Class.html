@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer</title>
+</head>
+<body>
+<h2>Thêm Sản Phẩm Mới</h2>
+<p>
+    <label>
+        Tên Máy <input id="name" placeholder="Tên Máy" type="text">
+        Phiên bản <input id="model" placeholder="Model" type="text">
+        Hãng sản Xuất <input id=company placeholder="Company" type="text">
+        Giá cả <input id="price" placeholder="Price" type="text">
+        <button onclick="addProduct()">Thêm</button>
+    </label>
+</p>
+<h2>Danh Sách Sản Phẩm</h2>
+<table border="1" width="1000px">
+    <thead>
+    <tr>
+        <th>Tên Máy</th>
+        <th>Phiên Bản</th>
+        <th>Hãng Sản Xuất</th>
+        <th>Giá Cả</th>
+    </tr>
+    </thead>
+    <tbody id="product">
+
+    </tbody>
+</table>
+
+<script>
+    class Computer {
+        constructor(model, name, company, price) {
+            this.model = model;
+            this.name = name;
+            this.company = company;
+            this.price = price;
+
+        }
+
+        setModel(model) {
+            this.model = model;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setCompany(company) {
+            this.company = company;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getModel() {
+            return this.model;
+        }
+
+        getName() {
+            return this.name;
+        };
+
+        getCompany() {
+            return this.company;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        toString() {
+            return `tên máy: ${this.name}, Model: ${this.model}, Hãng sản xuất: ${this.company}, Giá : ${this.price} `;
+        }
+    }
+
+    let computer = new Computer();
+    computer.setModel('L340');
+    computer.setName('Lenovo');
+    computer.setCompany("Lenovo");
+    computer.setPrice(17000000);
+    let arrayCustomer = [computer];
+
+    function displayProduct() {
+        let string = ""
+        for (let i = 0; i < arrayCustomer.length; i++) {
+            string = string + `<tr> <td>${arrayCustomer[i].getName()}</td><td>${arrayCustomer[i].getModel()}</td>
+                            <td>${arrayCustomer[i].getCompany()}</td><td>${arrayCustomer[i].getPrice()}</td></tr>`;
+        }
+        document.getElementById('product').innerHTML = string
+    }
+
+    displayProduct()
+
+    function addProduct() {
+        let name = document.getElementById('name').value;
+        let model = document.getElementById('model').value;
+        let company = document.getElementById('company').value;
+        let price = document.getElementById('price').value;
+        let computer = new Computer();
+        computer.setPrice(price);
+        computer.setCompany(company);
+        computer.setModel(model);
+        computer.setName(name);
+        for (let i = 0; i < arrayCustomer.length-1; i++) {
+            debugger
+            if(arrayCustomer.length<2&& 1*arrayCustomer[i].getPrice()<1*computer.getPrice()){
+                arrayCustomer.push(computer);
+                break;
+            }else if (arrayCustomer.length<2&& 1*arrayCustomer[i].getPrice()>1*computer.getPrice()){
+                arrayCustomer.unshift(computer)
+                break;
+            }else if (1*arrayCustomer[i].getPrice()<1*computer.getPrice()&&1*arrayCustomer[i+1].getPrice()>1*computer.getPrice()){
+                arrayCustomer.splice(i+1,0,computer);
+                break;
+            }
+        }
+        if (arrayCustomer.indexOf(computer)===-1&&1*arrayCustomer[0].getPrice()>1*computer.getPrice()){
+            arrayCustomer.unshift(computer);
+        }else if (arrayCustomer.indexOf(computer)===-1&&1*arrayCustomer[arrayCustomer.length-1].getPrice()<1*computer.getPrice()){
+            arrayCustomer.push(computer);
+        }
+        displayProduct();
+    }
+</script>
+</body>
+</html>

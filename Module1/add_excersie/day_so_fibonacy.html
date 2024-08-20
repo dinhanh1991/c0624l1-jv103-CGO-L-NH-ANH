@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check day so fibonaci</title>
+</head>
+<body>
+<script>
+    function checkArray(array) {
+        let max = array[0];// max dùng để tạo ra dãy fibonacy với số lớn nhất không bé hơn max của dãy số kiểm tra
+        for (let i = 1; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+        // tạo ra dãy số fibonacy để so sánh
+        let arrayFibonacci = [0, 1, 1];
+        while (arrayFibonacci[arrayFibonacci.length - 1] < max) {
+
+            arrayFibonacci.push(arrayFibonacci[arrayFibonacci.length - 1] + arrayFibonacci[arrayFibonacci.length - 2]);
+        }
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < arrayFibonacci.length; j++) {
+                debugger
+                if (array[i] === arrayFibonacci[j]&&array[i]===1){
+                    newArray.push(array[i]);
+                    break;
+                }else if (array[i] === arrayFibonacci[j]){
+                    newArray.push(array[i]);
+                }
+            }
+        }
+        // Kiểm tra và sắp xếp lại mảng moi tạo ra
+        let temp;
+        if (newArray.length < 1) {
+            return `day so khong có so fibonacci`;
+        } else {
+            for (let i = 0; i < newArray.length; i++) {
+                for (let j = newArray.length-1; j > i; j--) {
+                    if (newArray[j] < newArray[i]) {
+                        temp = newArray[i];
+                        newArray[i] = newArray[j];
+                        newArray[j] = temp;
+                    }
+                }
+            }
+            return newArray;
+        }
+    }
+    let myArray = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];
+    let b = checkArray(myArray);
+    document.write(b);
+</script>
+</body>
+</html>

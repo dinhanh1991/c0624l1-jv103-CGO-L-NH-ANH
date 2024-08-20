@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam4</title>
+</head>
+<body>
+<h2>Đền Thông Tin</h2>
+<p>
+    <label>
+        Mã Khách hàng <input id="id" placeholder="Mã Khách Hàng" type="text">
+        Tên <input id="name" placeholder="Họ Và Tên" type="text">
+        Số Điện Thoại <input id=phoneNumber placeholder="Số Điện Thoại" type="number">
+        Địa Chỉ <input id="address" placeholder=" Địa Chỉ" type="text">
+        Email <input id="email" placeholder=" customer@gmail.com" type="email">
+        <button onclick="addCustomer()">Thêm</button>
+    </label>
+</p>
+<h2>Danh Sách Khách Hàng</h2>
+<table border="1" >
+    <thead>
+    <tr>
+        <th width="150px">Mã Khách Hàng</th>
+        <th width="150px">Họ Và Tên</th>
+        <th width="150px">Số Điện Thoại</th>
+        <th width="150px">Địa Chỉ</th>
+        <th width="150px">Email</th>
+    </tr>
+    </thead>
+    <tbody id="customer">
+
+    </tbody>
+</table>
+<script>
+    class Customer{
+        constructor(idCustomer,nameCustomer,telephoneNumber,address,email) {
+            this.idCustomer=idCustomer;
+            this.nameCustomer=nameCustomer;
+            this.telephoneNumber=telephoneNumber;
+            this.address=address;
+            this.email=email;
+        }
+    }
+    let customer =new Customer("KH2206","Nguyễn Văn A","0987 333 xxx","Liên Chiểu-Đà Nẵng","anguyen@gmail.com");
+    let arrayCustomer=[customer];
+    function displayCustomer() {
+        let string = "";
+        for (let i = 0; i < arrayCustomer.length; i++) {
+            string = string + `<tr> <td>${arrayCustomer[i].idCustomer}</td><td>${arrayCustomer[i].nameCustomer}</td>
+                            <td>${arrayCustomer[i].telephoneNumber}</td><td>${arrayCustomer[i].address}</td><td>${arrayCustomer[i].email}</td></tr>`;
+        }
+        document.getElementById('customer').innerHTML=string;
+    }
+    displayCustomer()
+    function addCustomer() {
+        let id =document.getElementById('id').value;
+        let name =document.getElementById('name').value;
+        let telephoneNumber =document.getElementById('phoneNumber').value;
+        let address =document.getElementById('address').value;
+        let email =document.getElementById('email').value;
+        let newCustomer=new Customer(id,name,telephoneNumber,address,email);
+        arrayCustomer.push(newCustomer);
+        displayCustomer();
+    }
+</script>
+</body>
+</html>

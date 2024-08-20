@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam3</title>
+</head>
+<body>
+<script>
+    let number = +prompt('nhap so phan tu cua day so');
+    let arrayNumber = [];
+    let intK = +prompt('nhập so nguyen duong k');
+    while (number > 50) {
+        number = +prompt('so phan tu khong duoc vuot qua 50 nhap lai so phan tu:');
+    }
+    for (let i = 0; i < number; i++) {
+        arrayNumber[i] = +prompt(`nhap phan tu thu ${i + 1}`);
+    }
+    document.write(`day so vua nhap vao la: ${arrayNumber} <br>`);
+    let count = 0;
+    for (let i = 0; i < arrayNumber.length; i++) {
+        for (let j = arrayNumber.length - 1; j > i; j--) {
+            if ((arrayNumber[i] + arrayNumber[j]) % intK === 0) {
+                count++;
+            }
+        }
+    }
+    document.write(`day so co ${count} cap so chia het cho ${intK}`);
+</script>
+</body>
+</html>

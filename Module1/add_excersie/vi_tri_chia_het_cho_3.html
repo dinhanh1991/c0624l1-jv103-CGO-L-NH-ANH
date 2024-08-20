@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vi_tri_chia_het_cho_3</title>
+</head>
+<body>
+<script>
+    let number=+prompt('nhập số lượng phần tử của dãy số');
+    let arrayNumber=[];
+    for(let i =0; i<number;i++){
+        arrayNumber[i]= +prompt(`nhập số nguyen thứ ${i} <br>`)
+    }
+    alert(`day so vua nhap la ${arrayNumber}`)
+    while (arrayNumber.length>50){
+        arrayNumber.pop();
+    }
+    let count =0;
+    let sum=0;
+    for (let i=0;i<arrayNumber.length;i=i+3){
+        if (arrayNumber[i]%5===0){
+            count++;
+            sum=sum+arrayNumber[i];
+        }
+    }
+    let avg =sum/count;
+    alert(`tai cac vi tri chia het cho 3 co ${count} số chia het cho 5.<br> co gia tri trung binh la ${avg}`);
+</script>
+</body>
+</html>

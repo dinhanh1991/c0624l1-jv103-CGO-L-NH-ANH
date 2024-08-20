@@ -6,9 +6,27 @@
 </head>
 <body>
 <script>
-    function checkDateString(String) {
-console.log()
-
+    //kiêm tra chuỗi có phải là ngày tháng năm dd/mm/yyyy
+    function checkDateString(string) {
+        if (string.length !== 10) {
+            return false
+        } else if (string[2] !== '/' && string[5] !== '/') {
+            return false;
+        } else if (!(1 * string.slice(0, 2))||!(1 * string.slice(3, 5))||!(1 * string.slice(6, 9))){
+            return false;
+        }else if (1 * string.slice(0, 2)>31||1 * string.slice(3, 5)>12||1 * string.slice(0, 2)<0||1 * string.slice(3, 5)<0){
+            return false
+        }else {
+            return true;
+        }
+    }
+    let myString = prompt('nhập chutx ký tự');
+    document.write(myString);
+    let a=checkDateString(myString);
+    if (a){
+        alert('true');
+    }else {
+        alert('false');
     }
 </script>
 </body>
