@@ -21,6 +21,9 @@
     }
 
     let number = +prompt('nhập số điểm');
+    while (number<0||number>100){
+        number= +prompt('nhap lai so diem so diem phai khong nho hon 0 va khong vuot qua 100');
+    }
     let a = checkResult(number);
     alert(a);
 </script>
