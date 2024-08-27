@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vi du 1</title>
+</head>
+<body>
+<p>Hàm sẽ được kích hoạt khi người dùng thả một phím đã nhấn trong thẻ. Hàm này sẽ chuyển toàn bộ nội dung sang chữ viết hoa.</p>
+Nhập tên của bạn: <input type="text" id="fname" onkeypress="myFunction()">
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+
+</body>
+</html>
