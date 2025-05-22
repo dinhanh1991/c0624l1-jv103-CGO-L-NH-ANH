@@ -237,7 +237,7 @@
             for (let k = 0; k < 5; k++) {
                 for (let i = this.rowPosition + this.shape[this.shapePosition].length - 1; i >= this.rowPosition; i--) {
                     if (board.table[i].indexOf(7) < 0) {
-                        count++
+                        count++;
                         for (let j = i; j > 0; j--) {
                             for (let m = 0; m < columns; m++) {
                                 board.table[j][m] = board.table[j - 1][m];
@@ -247,17 +247,18 @@
                 }
             }
             switch (count) {
-                case 0 || 1:
-                    score = score + (count + 0.5 * level) * 100;
+                case 0:
+                case 1:
+                    score += (count + 0.5 * level) * 100; // Bạn có thể tăng thêm số điểm cho từng dòng
                     break;
                 case 2:
-                    score = score + (count + 0.5 * level) * 100 * 1.4;
+                    score += (count + 0.5 * level) * 100 * 1.4;
                     break;
                 case 3:
-                    score = score + (count + 0.5 * level) * 100 * 1.8;
+                    score += (count + 0.5 * level) * 100 * 1.8;
                     break;
                 case 4:
-                    score = score + (count + 0.5 * level) * 100 * 2;
+                    score += (count + 0.5 * level) * 100 * 2;
                     break;
             }
             level = Math.floor(score / 1000);
@@ -290,6 +291,8 @@
         document.getElementById('score').value = score;
         level = 0;
         document.getElementById('level').value = level;
+
+        let intervalTime = 1000;
         let reGame = setInterval(function () {
             if (!gameOver) {
                 brick.moveDown();
@@ -298,12 +301,16 @@
                     brick.checkFullAndGetScore();
                     brick = creativeBrick();
                     brick.drawBrick();
+
+                    intervalTime = Math.max(200, 1000 - (level * 100));
+                    clearInterval(reGame);
+                    reGame = setInterval(arguments.callee, intervalTime);
                 }
             } else {
                 clearInterval(reGame);
                 gameOver = false;
             }
-        },1000);
+        }, intervalTime);
     }
     let board = new Board(ctx);
     board.drawBoard();
